@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Kitchen & Bath Design Consultation | Payless Kitchen & Bath</title>
+  <meta name="description" content="Free kitchen and bathroom design consultation from Payless Kitchen & Bath — family-owned since 1985, BBB A+ rated. See if your home qualifies.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .step { display: none; }
+    .step.active { display: block; }
+    .option-box.selected { border-color: #38bdf8; background-color: #0c4a6e; box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35); }
+
+    .carousel-slide { display: none !important; position: relative; }
+    .carousel-slide.active { display: block !important; animation: fadeIn 0.4s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .carousel-dot { width: 6px; height: 6px; border-radius: 9999px; background-color: rgba(255,255,255,0.25); transition: all 0.25s ease; cursor: pointer; border: none; padding: 0; }
+    .carousel-dot.active { background-color: #38bdf8; width: 22px; }
+
+    details.faq-item summary { list-style: none; cursor: pointer; }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+<body class="bg-zinc-950 min-h-screen text-slate-100 font-sans antialiased flex flex-col justify-between selection:bg-sky-500 selection:text-white">
+
+  <header class="w-full bg-zinc-900 border-b border-zinc-800 py-4 px-6 sticky top-0 z-40 shadow-xl">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+      <img src="PAYLESS-LOGO.png" alt="Payless Kitchen & Bath" class="h-14 w-auto object-contain">
+      <div class="flex flex-wrap justify-center items-center gap-2 text-xs font-black tracking-widest uppercase text-slate-300">
+        <span class="text-sky-300 bg-sky-950/60 border border-sky-900 px-3 py-1.5 rounded-md">🏠 Family-Owned Since 1985</span>
+        <span class="text-emerald-400 bg-emerald-950/60 border border-emerald-900 px-3 py-1.5 rounded-md">⭐ BBB A+ Rated</span>
+        <span class="text-sky-400 bg-sky-950/60 border border-sky-900 px-3 py-1.5 rounded-md">🛡️ Fully Licensed & Insured</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="w-full bg-gradient-to-b from-zinc-900 via-zinc-950 to-zinc-950 py-12 px-4 border-b border-zinc-900">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight">
+        Kitchen & Bathroom Remodeling Built to Last — and Actually Enjoy
+      </h1>
+      <p class="text-slate-300 text-base max-w-2xl mx-auto leading-relaxed">
+        Forty years of craftsmanship. BBB A+ rated. Transparent, fixed pricing and premium materials for homeowners who want it done right, not just done fast. See if your home qualifies for a free design consultation below.
+      </p>
+
+      <div id="quizCard" class="w-full max-w-2xl mx-auto bg-zinc-900 border-2 border-zinc-800/80 rounded-2xl shadow-2xl p-8 sm:p-10 text-left mt-10 relative scroll-mt-24">
+
+        <div class="w-full bg-zinc-800 h-2 rounded-full mb-8 overflow-hidden">
+          <div id="progressBar" class="bg-gradient-to-r from-sky-500 to-blue-600 h-full w-[7%] transition-all duration-300"></div>
+        </div>
+
+        <div id="surveyHeader" class="mb-6 border-b border-zinc-800/60 pb-4">
+          <h2 id="dynamicMainTitle" class="font-display text-xl font-bold text-white tracking-tight">See If Your Home Qualifies</h2>
+          <p id="dynamicSubTitle" class="text-xs text-slate-400 mt-1">Takes about 60 seconds — no obligation.</p>
+        </div>
+
+        <div id="step1" class="step active">
+          <label class="block text-base font-bold text-slate-200 mb-2">What's your ZIP code?</label>
+          <input type="text" id="zip" placeholder="e.g. 91201" class="w-full bg-zinc-950 p-4 border-2 border-zinc-800 rounded-xl text-center text-3xl font-black tracking-widest text-sky-400 focus:outline-none focus:border-sky-500 mb-6 transition" maxlength="5">
+          <button onclick="validateZipRadius()" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-extrabold p-4 rounded-xl transition shadow-lg tracking-wider uppercase text-sm">Check My Area</button>
+        </div>
+
+        <div id="step2" class="step">
+          <label class="block text-base font-bold text-slate-200 mb-6 text-center">What are you looking to remodel?</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div onclick="executeProjectBranch('Kitchen Remodel', this)" class="option-box p-6 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition group">
+              <div class="text-4xl mb-3 group-hover:scale-105 transition">🍳</div>
+              <span class="font-black text-slate-200 block text-base">Kitchen Remodel</span>
+            </div>
+            <div onclick="executeProjectBranch('Bathroom Remodel', this)" class="option-box p-6 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition group">
+              <div class="text-4xl mb-3 group-hover:scale-105 transition">🛁</div>
+              <span class="font-black text-slate-200 block text-base">Bathroom Remodel</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="step3" class="step">
+          <label class="block text-base font-bold text-slate-200 mb-6 text-center">Do you own your home?</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div onclick="selectOption('isHomeowner', 'Yes (Homeowner Verified)', this, 4)" class="option-box p-6 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <div class="text-4xl mb-2">📜</div>
+              <span class="font-bold text-slate-200 block text-sm">Yes, I'm the Homeowner</span>
+            </div>
+            <div onclick="disqualify('Thanks for your interest! Because renovation approval requires authorization from the property owner, we are only able to work directly with homeowners at this time. If you own a home elsewhere, we would love to hear from you.')" class="option-box p-6 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <div class="text-4xl mb-2">🏢</div>
+              <span class="font-bold text-slate-200 block text-sm">No, I Rent</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="step4" class="step">
+          <label class="block text-base font-bold text-slate-200 mb-6 text-center">Can all decision-makers for this project attend the design consultation?</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div onclick="selectOption('spousePresent', 'Yes (All Decision-Makers Present)', this, 5)" class="option-box p-6 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <div class="text-4xl mb-2">👥</div>
+              <span class="font-bold text-slate-200 block text-sm">Yes, Everyone Can Be There</span>
+            </div>
+            <div onclick="disqualify('To make sure your consultation is as productive as possible, we ask that everyone involved in the decision be present, so we can answer every question in one visit. Please reach back out once everyone is available to attend together.')" class="option-box p-6 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <div class="text-4xl mb-2">👤</div>
+              <span class="font-bold text-slate-200 block text-sm">No, Not Everyone</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="step5" class="step">
+          <label class="block text-base font-bold text-slate-200 mb-6 text-center">What type of project are you envisioning?</label>
+
+          <div id="bathScopeOptions" class="space-y-3 hidden">
+            <div onclick="selectOption('projectScope', 'Tub-to-Shower Conversion', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
+              <div class="text-2xl">🔄</div>
+              <div><span class="font-bold text-slate-200 block text-sm">Tub-to-Shower Conversion</span><span class="text-xs text-slate-400">Replace your tub with a walk-in shower, fully redone from the studs out</span></div>
+            </div>
+            <div onclick="selectOption('projectScope', 'Secondary/Guest Bathroom Remodel', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
+              <div class="text-2xl">🚿</div>
+              <div><span class="font-bold text-slate-200 block text-sm">Secondary / Guest Bathroom Remodel</span><span class="text-xs text-slate-400">A full refresh — new vanity, fixtures, tile, and finishes</span></div>
+            </div>
+            <div onclick="selectOption('projectScope', 'Luxury Master Bathroom Remodel', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
+              <div class="text-2xl">👑</div>
+              <div><span class="font-bold text-slate-200 block text-sm">Luxury Master Bathroom Remodel</span><span class="text-xs text-slate-400">A spa-level transformation of your primary bathroom, designed to last</span></div>
+            </div>
+          </div>
+
+          <div id="kitchenScopeOptions" class="space-y-3 hidden">
+            <div onclick="selectOption('projectScope', 'Cabinet Refacing', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
+              <div class="text-2xl">🎛️</div>
+              <div><span class="font-bold text-slate-200 block text-sm">Cabinet Refacing</span><span class="text-xs text-slate-400">New doors, drawers, and soft-close hardware for a dramatic look without a full teardown</span></div>
+            </div>
+            <div onclick="selectOption('projectScope', 'Full Kitchen Remodel', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
+              <div class="text-2xl">🍳</div>
+              <div><span class="font-bold text-slate-200 block text-sm">Full Kitchen Remodel</span><span class="text-xs text-slate-400">Cabinets, countertops, backsplash, and layout — reimagined from the ground up</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="step6" class="step">
+          <label id="renovationAgeLabel" class="block text-base font-bold text-slate-200 mb-6 text-center">When was your space last updated?</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div onclick="selectOption('lastRenovation', 'Under 5 Years', this, 7)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <span class="font-bold text-slate-200 text-sm">Under 5 Years</span>
+            </div>
+            <div onclick="selectOption('lastRenovation', '5-10 Years Ago', this, 7)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <span class="font-bold text-slate-200 text-sm">5–10 Years Ago</span>
+            </div>
+            <div onclick="selectOption('lastRenovation', '10-20 Years Ago', this, 7)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <span class="font-bold text-slate-200 text-sm">10–20 Years Ago</span>
+            </div>
+            <div onclick="selectOption('lastRenovation', 'Over 20 Years Ago', this, 7)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <span class="font-bold text-slate-200 text-sm">Over 20 Years Ago</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="step7" class="step">
+          <label class="block text-base font-bold text-slate-200 mb-4 text-center">Are you keeping the current layout, or moving plumbing/walls?</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div onclick="selectOption('layoutChange', 'Keeping Current Layout', this, 8)" class="option-box p-5 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <div class="text-2xl mb-2">📐</div>
+              <span class="font-bold text-slate-200 block text-xs">Keep Layout (Recommended)</span>
+            </div>
+            <div onclick="disqualify('Projects that involve moving walls or main plumbing lines require a different scope than what we offer. We focus on premium remodels within your existing layout, with no lengthy permitting delays and no structural surprises. If your plans change, we would love to hear from you.')" class="option-box p-5 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <div class="text-2xl mb-2">🧱</div>
+              <span class="font-bold text-slate-200 block text-xs">Move Walls or Plumbing</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="step8" class="step">
+          <label class="block text-base font-bold text-slate-200 mb-6 text-center">What's your comfortable budget range for this project?</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div onclick="selectOption('budget', '$15,000 – $30,000', this, 9)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <span class="font-bold text-sky-400 text-sm">$15,000 – $30,000</span>
+            </div>
+            <div onclick="selectOption('budget', '$30,000 – $50,000', this, 9)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <span class="font-bold text-sky-400 text-sm">$30,000 – $50,000</span>
+            </div>
+            <div onclick="selectOption('budget', '$50,000 – $75,000', this, 9)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <span class="font-bold text-sky-400 text-sm">$50,000 – $75,000</span>
+            </div>
+            <div onclick="selectOption('budget', '$75,000+', this, 9)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <span class="font-bold text-sky-400 text-sm">$75,000+</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="step9" class="step">
+          <label class="block text-base font-bold text-slate-200 mb-6 text-center">How would you like to structure payment for this project?</label>
+          <div class="space-y-3">
+            <div onclick="setFundingTypePath('0% Interest Financing (12 Months)', 10)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center justify-between hover:border-zinc-700 transition">
+              <div>
+                <span class="font-bold text-slate-200 text-sm block">Finance the Project</span>
+                <span class="text-xs text-slate-400 mt-0.5">0% interest for 12 months, subject to credit approval</span>
+              </div>
+            </div>
+            <div onclick="setFundingTypePath('Cash / Direct Payment (No Financing)', 11)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center justify-between hover:border-zinc-700 transition">
+              <div>
+                <span class="font-bold text-slate-200 text-sm block">Pay Directly</span>
+                <span class="text-xs text-slate-400 mt-0.5">Cash, check, or home equity</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="step10" class="step">
+          <label class="block text-base font-bold text-slate-200 mb-2 text-center">Quick Financing Pre-Check</label>
+          <p class="text-xs text-slate-400 text-center mb-6">This is a quick, informal check — it won't affect your credit score. Estimated payments start around $150–$249/month.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div onclick="selectOption('creditCheck', 'Good Credit (620+)', this, 11)" class="option-box p-5 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <span class="font-bold text-slate-200 block text-sm">My Credit is Good (620+)</span>
+            </div>
+            <div onclick="selectOption('creditCheck', 'Under 620 or Unsure', this, 11)" class="option-box p-5 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+              <span class="font-bold text-slate-200 block text-sm">Under 620 or Unsure</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="step11" class="step">
+          <label class="block text-base font-bold text-slate-200 mb-6 text-center">When are you hoping to start?</label>
+          <div class="space-y-3">
+            <div onclick="selectOption('constructionTimeline', 'As Soon As Possible', this, 12)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-3 hover:border-zinc-700 transition">
+              <span class="text-xl">⚡</span> <span class="font-bold text-slate-200 text-sm">As Soon As Possible</span>
+            </div>
+            <div onclick="selectOption('constructionTimeline', 'Within 1-3 Months', this, 12)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-3 hover:border-zinc-700 transition">
+              <span class="text-xl">📅</span> <span class="font-bold text-slate-200 text-sm">Within 1–3 Months</span>
+            </div>
+            <div onclick="selectOption('constructionTimeline', 'Just Exploring For Now', this, 12)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-3 hover:border-zinc-700 transition">
+              <span class="text-xl">🔍</span> <span class="font-bold text-slate-200 text-sm">Just Exploring for Now</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="step12" class="step">
+          <label class="block text-base font-bold text-slate-200 mb-4 text-center">Choose a Time for Your Free Design Consultation</label>
+          <div class="space-y-4">
+            <div>
+              <label class="text-[10px] font-black text-slate-400 block mb-1 uppercase tracking-widest">Preferred Date</label>
+              <input type="date" id="appointment_date" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl font-bold text-white focus:outline-none focus:border-sky-500">
+            </div>
+            <div>
+              <label class="text-[10px] font-black text-slate-400 block mb-1 uppercase tracking-widest">Preferred Time</label>
+              <select id="appointment_time" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl font-bold text-slate-200 focus:outline-none focus:border-sky-500">
+                <option value="10:00am">Morning: 10:00 AM – 11:00 AM</option>
+                <option value="02:00pm">Afternoon: 2:00 PM – 3:00 PM</option>
+                <option value="06:00pm">Evening: 6:00 PM – 7:00 PM</option>
+              </select>
+            </div>
+            <button onclick="commitCalendarMatrix()" class="w-full mt-2 bg-sky-600 hover:bg-sky-500 text-white font-bold p-4 rounded-xl transition shadow-lg uppercase text-xs tracking-wider">Confirm My Appointment</button>
+          </div>
+        </div>
+
+        <div id="step13" class="step">
+          <label class="block text-base font-bold text-slate-200 mb-4 text-center">Almost done! Where should we send your confirmation?</label>
+          <div class="space-y-3">
+            <div class="grid grid-cols-2 gap-3">
+              <input type="text" id="firstname" placeholder="First Name" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+              <input type="text" id="lastname" placeholder="Last Name" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+            </div>
+            <input type="tel" id="phone" placeholder="Mobile Phone (e.g. 516-759-3334)" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+            <input type="email" id="email" placeholder="Email Address" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+            <input type="text" id="address" placeholder="Property Street Address" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+            <input type="text" id="city" placeholder="City" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+
+            <p class="text-[10px] text-slate-500 leading-normal text-justify px-1 py-1.5 font-medium">
+              By clicking below, you provide your express written consent for Payless Kitchen & Bath and its representatives to contact you by phone call or automated SMS text message about your project. Message and data rates may apply, and you can opt out anytime by replying STOP. Your information is encrypted and will never be shared or sold to third parties.
+            </p>
+
+            <button onclick="triggerSmsOtpPipeline()" id="smsBtn" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold p-4 rounded-xl transition shadow-lg uppercase text-xs tracking-wider">Send My Verification Code</button>
+          </div>
+        </div>
+
+        <div id="step14" class="step text-center">
+          <div class="text-4xl mb-2">🔒</div>
+          <label class="block text-base font-bold text-slate-100 mb-1">Enter Your Verification Code</label>
+          <p class="text-xs text-slate-400 max-w-sm mx-auto mb-6">We just texted a 6-digit code to your phone. Enter it below to confirm your appointment.</p>
+          <input type="text" id="otp_input" placeholder="000000" class="w-full max-w-xs bg-zinc-950 p-4 border-2 border-zinc-800 rounded-xl text-center text-4xl font-black tracking-widest text-sky-400 focus:outline-none focus:border-sky-500 mb-6" maxlength="6">
+          <button onclick="verifyTokenAndSubmit()" id="verifyBtn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold p-4 rounded-xl transition shadow-lg uppercase text-xs tracking-wider">Confirm Appointment</button>
+        </div>
+
+        <div id="disqualified" class="step text-center py-6">
+          <div class="text-5xl mb-4">🙏</div>
+          <h2 class="font-display text-lg font-bold text-red-400 mb-2">Thanks for Your Interest</h2>
+          <p id="disqualify_reason" class="text-slate-300 text-xs leading-relaxed max-w-sm mx-auto"></p>
+        </div>
+
+        <div id="success" class="step text-center py-6">
+          <div class="text-5xl mb-4">🎉</div>
+          <h2 class="font-display text-xl font-bold text-emerald-400 mb-2">Your Consultation is Confirmed!</h2>
+          <p class="text-slate-300 text-xs max-w-sm mx-auto leading-relaxed">We've got everything we need. A member of our design team will call you within 24 hours to confirm the details and answer any questions before your visit. We're looking forward to it!</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="recaptcha-container"></div>
+
+  <main class="max-w-4xl mx-auto px-4 py-14 w-full space-y-16">
+    <section class="space-y-8">
+      <div class="text-center space-y-2">
+        <span class="bg-sky-950 border border-sky-800 text-sky-400 text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">Our Process</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white">Simple, Transparent, No Surprises</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 text-center space-y-3">
+          <div class="text-3xl">🗓️</div>
+          <h3 class="font-black text-white text-sm uppercase tracking-wide">1. Free Design Consultation</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">We visit your home, walk through your vision, and put together a design concept — no cost, no obligation.</p>
+        </div>
+        <div class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 text-center space-y-3">
+          <div class="text-3xl">📋</div>
+          <h3 class="font-black text-white text-sm uppercase tracking-wide">2. Fixed-Price Proposal</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">You'll get a clear, itemized proposal before any work begins. No vague estimates, no surprise change orders.</p>
+        </div>
+        <div class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 text-center space-y-3">
+          <div class="text-3xl">🔨</div>
+          <h3 class="font-black text-white text-sm uppercase tracking-wide">3. Expert Installation</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Your dedicated project team handles everything from demo to final walkthrough, on the timeline we commit to in writing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <div class="text-center">
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white">What Our Clients Are Saying</h2>
+        <p class="text-xs text-slate-200 mt-0.5">Real reviews from our Facebook page</p>
+      </div>
+
+      <div id="fbCarousel" class="relative rounded-2xl border border-zinc-800 bg-zinc-900/60 shadow-2xl overflow-hidden">
+        <div class="relative">
+          <button onclick="moveCarousel('fbCarousel', -1)" aria-label="Previous review" class="absolute top-1/2 -translate-y-1/2 left-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">◀</button>
+          <button onclick="moveCarousel('fbCarousel', 1)" aria-label="Next review" class="absolute top-1/2 -translate-y-1/2 right-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">▶</button>
+          <div class="flex items-center justify-center py-6 px-4">
+            <div class="carousel-slide active w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fgurinderjit.kaur.771%2Fposts%2Fpfbid02qZzt8CeVr5reLc263Nzg9qP1kXCy8Jb9Gh8We6JJx3NjpwWzA4DzQaG6kRTNR6V6l&show_text=true&width=500" width="100%" height="168" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fellen.higgins.79%2Fposts%2Fpfbid0KTQJQA53rzkDs2X5HCVZYKfePsYkVdW6SrZiH6LkQThYnnN28GGGKJcUtnwkaafJl&show_text=true&width=500" width="100%" height="168" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fbreabrowns%2Fposts%2Fpfbid027tJfbYKobdJ89k896NUr9mqpDQxkyFXM8CxX5GTKHKkAmpGAmtbTiS6NGpQCGPeGl&show_text=true&width=500" width="100%" height="246" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fchrisitne.romero%2Fposts%2Fpfbid02FYToTnqDH3cSjsxqN3v1vyZWvjukYPeuSjCyXjw4g6XrskEe4UuBTzjLtHa9KikVl&show_text=true&width=500" width="100%" height="246" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fharold.anderson.5%2Fposts%2Fpfbid025QND4Rar1XXjgc7LQEArSbSTpztDCq9Kt9jRZcjJKQmTs139DaJeQRhU2M2RfGf8l&show_text=true&width=500" width="100%" height="265" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fdaphne.tanori%2Fposts%2Fpfbid02J9ieeV954z56joudCBBMvbLzFNuWEMUcK7UuMMVAMmTWFT22gLe44fwn6PoUPFMrl&show_text=true&width=500" width="100%" height="207" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02F7tcLC1vPqZPWkCJh9hTN3Q4JuJxcMZhrSvKEo76tDnahCS7KC85ps2YQqX322y6l%26id%3D61569887472233&show_text=true&width=500" width="100%" height="246" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fralph.seaman%2Fposts%2Fpfbid0WTQck9ERQ5N8b4cYkTKQoQS79qE24qvXfHgC2E9LhbKFRDQP8B5JGEWe5ckD7rZCl&show_text=true&width=500" width="100%" height="207" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FDr.joseph.d.lockhart%2Fposts%2Fpfbid022J4U3pWwGYZnqu9i9TgFbM34HaxCTbvnBkyaYP8Seq4p951j5YGNAoTmjHAdr3sFl&show_text=true&width=500" width="100%" height="207" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fterri.gruenthal%2Fposts%2Fpfbid05mZ6nxuHYQio6nRcXE8VqKDtasqBN6DAFaiwkXE47PAkUAZqWhq3RQ6gP5CUTgZ1l&show_text=true&width=500" width="100%" height="226" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fbarton.wong.942%2Fposts%2Fpfbid0316vsGJsSBQjGfizMXZs1musvXrpkxhxL4mgxNKCmSMsE6kw18o68FbSk4G6JNmNul&show_text=true&width=500" width="100%" height="188" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fcharlotte.hybner%2Fposts%2Fpfbid02DAy4WdcxTdJQSqCPRZc8Cs2a7E3tx7YmEfNFCThnpCTSU8gUPbxm1atNNo1ivdS1l&show_text=true&width=500" width="100%" height="188" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmargaret.james.769488%2Fposts%2Fpfbid04QpBE5Nt2dESXdRQ68qk4bFQ9dZ227fF3r5LCEUUbUHmHYELPMorBQFaHJuBFt48l&show_text=true&width=500" width="100%" height="207" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-dots flex flex-wrap items-center justify-center gap-1.5 px-4 pb-4"></div>
+      </div>
+    </section>
+
+    <section class="space-y-10">
+      <div class="text-center">
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white">See Our Recent Work</h2>
+        <p class="text-xs text-slate-200 mt-1">Real transformations across Southern California</p>
+      </div>
+
+      <div class="space-y-12">
+        <div class="space-y-4">
+          <h3 class="text-xs font-black text-slate-300 uppercase tracking-widest flex items-center space-x-2 px-2"><span>🛁</span> <span>Bathroom Transformations</span></h3>
+          <div id="bathCarousel" class="relative rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl overflow-hidden">
+            <div class="relative">
+              <button onclick="moveCarousel('bathCarousel', -1)" aria-label="Previous photo" class="absolute top-1/2 -translate-y-1/2 left-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">◀</button>
+              <button onclick="moveCarousel('bathCarousel', 1)" aria-label="Next photo" class="absolute top-1/2 -translate-y-1/2 right-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">▶</button>
+              <div class="carousel-slide active cursor-pointer" onclick="openLightbox('images/bathroom-after-1.webp')">
+                <img src="images/bathroom-after-1.webp" alt="Bathroom remodel" class="w-full h-72 sm:h-96 object-cover">
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
+                  <span class="text-white font-black text-sm uppercase tracking-wide">Upland, CA</span>
+                </div>
+              </div>
+              <div class="carousel-slide cursor-pointer" onclick="openLightbox('images/bathroom-after-2.webp')">
+                <img src="images/bathroom-after-2.webp" alt="Bathroom remodel" class="w-full h-72 sm:h-96 object-cover">
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
+                  <span class="text-white font-black text-sm uppercase tracking-wide">West Covina, CA</span>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-dots flex items-center justify-center gap-1.5 py-4"></div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="text-xs font-black text-slate-300 uppercase tracking-widest flex items-center space-x-2 px-2"><span>🍳</span> <span>Kitchen Transformations</span></h3>
+          <div id="kitchenCarousel" class="relative rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl overflow-hidden">
+            <div class="relative">
+              <button onclick="moveCarousel('kitchenCarousel', -1)" aria-label="Previous photo" class="absolute top-1/2 -translate-y-1/2 left-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">◀</button>
+              <button onclick="moveCarousel('kitchenCarousel', 1)" aria-label="Next photo" class="absolute top-1/2 -translate-y-1/2 right-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">▶</button>
+              <div class="carousel-slide active cursor-pointer" onclick="openLightbox('images/kitchen-after-1.webp')">
+                <img src="images/kitchen-after-1.webp" alt="Kitchen remodel" class="w-full h-72 sm:h-96 object-cover">
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
+                  <span class="text-white font-black text-sm uppercase tracking-wide">Carson, CA</span>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-dots flex items-center justify-center gap-1.5 py-4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-8 border-t border-zinc-900 pt-14">
+      <div class="text-center space-y-2">
+        <span class="bg-sky-950 border border-sky-800 text-sky-400 text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">Why Homeowners Choose Us</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white max-w-xl mx-auto">Built for Homeowners Who Won't Settle</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+        <div class="flex items-start gap-3 bg-zinc-900/60 border border-zinc-800 rounded-xl p-4">
+          <span class="text-emerald-400 text-lg leading-none">✔</span>
+          <span class="text-sm text-slate-200 font-medium">Guaranteed timeline — in writing</span>
+        </div>
+        <div class="flex items-start gap-3 bg-zinc-900/60 border border-zinc-800 rounded-xl p-4">
+          <span class="text-emerald-400 text-lg leading-none">✔</span>
+          <span class="text-sm text-slate-200 font-medium">BBB A+ Accredited</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full bg-zinc-950 border-t border-zinc-900 py-10 px-6 text-center text-[10px] text-slate-500 font-bold uppercase tracking-widest space-y-3">
+     <div>Website by Web Services Pro © 2026</div>
+  </footer>
+
+  <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden flex flex-col justify-center items-center p-4" onclick="closeLightbox()">
+    <button class="absolute top-6 right-6 text-white text-3xl font-black">&times;</button>
+    <img id="lightboxImg" src="" alt="Enlarged project photo" class="max-w-full max-h-[85vh] rounded-xl shadow-2xl object-contain border border-zinc-800">
+  </div>
+
+  <script type="module">
+    // Import Web SDK variants natively from Google CDN networks
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+    // FIXME: Replace placeholders with your own keys extracted from Firebase Settings console
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const GATEWAY_URL = "https://script.google.com/macros/s/YOUR_NEW_DEPLOYMENT_ID/exec";
+
+    const TARGET_ZIP_CODES = [
+      "91201", "91202", "91203", "91204", "91205", "91206", "91207", "91208", "91210", "91214",
+      "90001", "90012", "90015", "90025", "90026", "90028", "90036", "90045", "90064", "90066",
+      "91101", "91103", "91104", "91105", "91106", "91107", "91108", "91784", "91785", "91786",
+      "91790", "91791", "91792", "91793", "93534", "93535", "93536", "93539", "93584", "90277",
+      "90278", "90745", "90746", "90747", "90749", "92840", "92841", "92842", "92843", "92844",
+      "92845", "92846"
+    ];
+
+    let currentStep = 1;
+    let formData = {};
+    let confirmationResult = null;
+
+    // Initialize invisible protection gate right before user requests SMS text block
+    window.initRecaptchaShield = function() {
+      if (!window.recaptchaVerifier) {
+        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+          'size': 'invisible'
+        });
+      }
+    };
+
+    function updateProgress() {
+      const percentage = (currentStep / 14) * 100;
+      document.getElementById('progressBar').style.width = `${percentage}%`;
+    }
+
+    window.advanceToNextStep = function(stepNum) {
+      document.getElementById(`step${currentStep}`).classList.remove('active');
+      currentStep = stepNum;
+      document.getElementById(`step${currentStep}`).classList.add('active');
+      updateProgress();
+    };
+
+    window.validateZipRadius = function() {
+      const entry = document.getElementById('zip').value.trim();
+      if (TARGET_ZIP_CODES.includes(entry)) {
+        formData.zip = entry;
+        window.advanceToNextStep(2);
+      } else {
+        window.disqualify("Thanks for your interest! Right now we are only able to take on projects within about 70 miles of Glendale, CA, and your ZIP code falls outside that service area. We would love to help if that changes in the future.");
+      }
+    };
+
+    window.executeProjectBranch = function(selection, element) {
+      formData.projectType = selection;
+      const segmentTerm = (selection === 'Kitchen Remodel') ? "kitchen" : "bathroom";
+      document.getElementById('renovationAgeLabel').innerText = `When was your ${segmentTerm} last updated?`;
+
+      if (selection === 'Kitchen Remodel') {
+        document.getElementById('kitchenScopeOptions').classList.remove('hidden');
+        document.getElementById('bathScopeOptions').classList.add('hidden');
+      } else {
+        document.getElementById('bathScopeOptions').classList.remove('hidden');
+        document.getElementById('kitchenScopeOptions').classList.add('hidden');
+      }
+
+      const options = element.parentNode.children;
+      for (let card of options) { card.classList.remove('selected'); }
+      element.classList.add('selected');
+      setTimeout(() => { window.advanceToNextStep(3); }, 350);
+    };
+
+    window.selectOption = function(field, val, el, nextStepNum) {
+      formData[field] = val;
+      const brothers = el.parentNode.children;
+      for (let bro of brothers) { bro.classList.remove('selected'); }
+      el.classList.add('selected');
+      setTimeout(() => { window.advanceToNextStep(nextStepNum); }, 350);
+    };
+
+    window.setFundingTypePath = function(val, nextStepNum) {
+      formData.fundingType = val;
+      if (val.includes("Cash")) {
+        formData.creditCheck = "Not Applicable (Paying Directly)";
+        window.advanceToNextStep(11);
+      } else {
+        window.advanceToNextStep(nextStepNum);
+      }
+    };
+
+    window.commitCalendarMatrix = function() {
+      const targetDate = document.getElementById('appointment_date').value;
+      if (!targetDate) return alert("Please select a date to continue.");
+      const [year, month, day] = targetDate.split('-');
+      formData.adate = `${month}/${day}/${year}`;
+      formData.atime = document.getElementById('appointment_time').value;
+      window.advanceToNextStep(13);
+    };
+
+    window.disqualify = function(reasonText) {
+      document.getElementById(`step${currentStep}`).classList.remove('active');
+      document.getElementById('surveyHeader').classList.add('hidden');
+      document.getElementById('progressBar').parentNode.classList.add('hidden');
+      document.getElementById('disqualify_reason').innerText = reasonText;
+      document.getElementById('disqualified').classList.add('active');
+    };
+
+    // Formats any standard typed phone number to exact E.164 specification (+1XXXXXXXXXX)
+    function cleanAndFormatE164(phoneStr) {
+      let rawDigits = phoneStr.replace(/\D/g, "");
+      if (rawDigits.length === 10) {
+        return "+1" + rawDigits;
+      } else if (rawDigits.length === 11 && rawDigits.startsWith("1")) {
+        return "+" + rawDigits;
+      }
+      return "+" + rawDigits; 
+    }
+
+    window.triggerSmsOtpPipeline = function() {
+      formData.firstname = document.getElementById('firstname').value.trim();
+      formData.lastname = document.getElementById('lastname').value.trim();
+      let rawPhone = document.getElementById('phone').value.trim();
+      formData.email = document.getElementById('email').value.trim();
+      formData.address = document.getElementById('address').value.trim();
+      formData.city = document.getElementById('city').value.trim();
+
+      if (!formData.firstname || !rawPhone || !formData.email || !formData.address || !formData.city) {
+        return alert("Please fill in all fields so we can confirm your appointment.");
+      }
+
+      // Convert user interface text directly into E.164 for Firebase eligibility
+      const formattedInternationalPhone = cleanAndFormatE164(rawPhone);
+      formData.phone = formattedInternationalPhone; 
+
+      const btn = document.getElementById('smsBtn');
+      btn.innerText = "Initializing security check...";
+      btn.disabled = true;
+
+      window.initRecaptchaShield();
+      const appVerifier = window.recaptchaVerifier;
+
+      signInWithPhoneNumber(auth, formattedInternationalPhone, appVerifier)
+        .then((result) => {
+          confirmationResult = result;
+          window.advanceToNextStep(14);
+        })
+        .catch((error) => {
+          alert("Firebase SMS failed to transmit: " + error.message);
+          btn.innerText = "Send My Verification Code";
+          btn.disabled = false;
+          if (window.recaptchaVerifier) {
+            window.recaptchaVerifier.render().then(widgetId => grecaptcha.reset(widgetId));
+          }
+        });
+    };
+
+    window.verifyTokenAndSubmit = function() {
+      const pinCode = document.getElementById('otp_input').value.trim();
+      if (!pinCode || pinCode.length !== 6) return alert("Please enter the 6-digit confirmation pin.");
+
+      const btn = document.getElementById('verifyBtn');
+      btn.innerText = "Authenticating code...";
+      btn.disabled = true;
+
+      confirmationResult.confirm(pinCode)
+        .then((result) => {
+          // Authentication matches successfully. Inject unique identifier logs.
+          formData.firebaseUid = result.user.uid;
+
+          btn.innerText = "Securing appointment block...";
+          
+          // Submit complete verification record package straight to Google Apps Script
+          return fetch(GATEWAY_URL, {
+            method: "POST",
+            body: JSON.stringify({ data: formData })
+          });
+        })
+        .then(res => res.json())
+        .then(res => {
+          if (res.success) {
+            document.getElementById('step14').classList.remove('active');
+            document.getElementById('surveyHeader').classList.add('hidden');
+            document.getElementById('progressBar').parentNode.classList.add('hidden');
+            document.getElementById('success').classList.add('active');
+          } else {
+            alert("Database syncing issue: " + res.error);
+            btn.innerText = "Confirm Appointment";
+            btn.disabled = false;
+          }
+        })
+        .catch((error) => {
+          alert("Verification pin rejected or network timed out: " + error.message);
+          btn.innerText = "Confirm Appointment";
+          btn.disabled = false;
+        });
+    };
+
+    // --- Carousel Core Engine Scripts ---
+    window.initCarousel = function(containerId, count) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const dotsWrap = container.querySelector('.carousel-dots');
+      dotsWrap.innerHTML = '';
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        dot.onclick = () => window.goToSlide(containerId, i);
+        dotsWrap.appendChild(dot);
+      }
+      container.dataset.index = "0";
+      window.goToSlide(containerId, 0);
+    };
+
+    window.goToSlide = function(containerId, index) {
+      const container = document.getElementById(containerId);
+      const slides = container.querySelectorAll('.carousel-slide');
+      const dots = container.querySelectorAll('.carousel-dot');
+      const count = slides.length;
+      const newIndex = ((index % count) + count) % count;
+      slides.forEach((s, i) => s.classList.toggle('active', i === newIndex));
+      dots.forEach((d, i) => d.classList.toggle('active', i === newIndex));
+      container.dataset.index = newIndex;
+    };
+
+    window.moveCarousel = function(containerId, direction) {
+      const container = document.getElementById(containerId);
+      const current = parseInt(container.dataset.index || '0', 10);
+      window.goToSlide(containerId, current + direction);
+    };
+
+    window.openLightbox = function(src) { 
+      document.getElementById('lightboxImg').src = src; 
+      document.getElementById('lightbox').classList.remove('hidden'); 
+    };
+    window.closeLightbox = function() { 
+      document.getElementById('lightbox').classList.add('hidden'); 
+    };
+
+    // Initialize display content metrics
+    window.initCarousel('fbCarousel', 13);
+    window.initCarousel('bathCarousel', 2);
+    window.initCarousel('kitchenCarousel', 1);
+  </script>
+</body>
+</html>
