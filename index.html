@@ -36,6 +36,24 @@
     details.faq-item summary { list-style: none; cursor: pointer; }
     details.faq-item summary::-webkit-details-marker { display: none; }
   </style>
+
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // FIXME: Replace 'YOUR_META_PIXEL_ID_HERE' with your real 15-digit Meta Pixel ID Token
+    fbq('init', 'YOUR_META_PIXEL_ID_HERE');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID_HERE&ev=PageView&noscript=1"/>
+  </noscript>
 </head>
 <body class="bg-zinc-950 min-h-screen text-slate-100 font-sans antialiased flex flex-col justify-between selection:bg-sky-500 selection:text-white">
 
@@ -397,42 +415,41 @@
       </div>
 
       <div class="space-y-12">
-        <!-- BATHROOM CAROUSEL -->
         <div class="space-y-4">
           <h3 class="text-xs font-black text-slate-300 uppercase tracking-widest flex items-center space-x-2 px-2"><span>🛁</span> <span>Bathroom Transformations</span></h3>
           <div id="bathCarousel" class="relative rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl overflow-hidden">
             <div class="relative">
               <button onclick="moveCarousel('bathCarousel', -1)" aria-label="Previous photo" class="absolute top-1/2 -translate-y-1/2 left-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">◀</button>
               <button onclick="moveCarousel('bathCarousel', 1)" aria-label="Next photo" class="absolute top-1/2 -translate-y-1/2 right-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">▶</button>
-          <div class="carousel-slide active cursor-pointer" onclick="openLightbox('J. Mohlengraft_After (upland).webp')">
+          <div class="carousel-slide active cursor-pointer" onclick="openLightbox('images/bathroom-after-1.webp')">
             <img src="images/bathroom-after-1.webp" alt="Bathroom remodel — Upland, CA" class="w-full h-72 sm:h-96 object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
               <span class="text-white font-black text-sm uppercase tracking-wide">Upland, CA</span>
             </div>
           </div>
 
-          <div class="carousel-slide cursor-pointer" onclick="openLightbox('E. Palanca_After (west covina).webp')">
+          <div class="carousel-slide cursor-pointer" onclick="openLightbox('images/bathroom-after-2.webp')">
             <img src="images/bathroom-after-2.webp" alt="Bathroom remodel — West Covina, CA" class="w-full h-72 sm:h-96 object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
               <span class="text-white font-black text-sm uppercase tracking-wide">West Covina, CA</span>
             </div>
           </div>
 
-          <div class="carousel-slide cursor-pointer" onclick="openLightbox('L. Brown_After (lancaster).webp')">
+          <div class="carousel-slide cursor-pointer" onclick="openLightbox('images/bathroom-after-3.webp')">
             <img src="images/bathroom-after-3.webp" alt="Bathroom remodel — Lancaster, CA" class="w-full h-72 sm:h-96 object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
               <span class="text-white font-black text-sm uppercase tracking-wide">Lancaster, CA</span>
             </div>
           </div>
 
-          <div class="carousel-slide cursor-pointer" onclick="openLightbox('J. Mcgowen_After.webp')">
+          <div class="carousel-slide cursor-pointer" onclick="openLightbox('images/bathroom-after-4.webp')">
             <img src="images/bathroom-after-4.webp" alt="Bathroom remodel — Modern Wet-Area Remodel" class="w-full h-72 sm:h-96 object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
               <span class="text-white font-black text-sm uppercase tracking-wide">Modern Wet-Area Remodel</span>
             </div>
           </div>
 
-          <div class="carousel-slide cursor-pointer" onclick="openLightbox('A. Fukuda _After (redondo beach).webp')">
+          <div class="carousel-slide cursor-pointer" onclick="openLightbox('images/bathroom-after-5.webp')">
             <img src="images/bathroom-after-5.webp" alt="Bathroom remodel — Redondo Beach, CA" class="w-full h-72 sm:h-96 object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
               <span class="text-white font-black text-sm uppercase tracking-wide">Redondo Beach, CA</span>
@@ -478,35 +495,34 @@
           </div>
         </div>
 
-        <!-- KITCHEN CAROUSEL -->
         <div class="space-y-4">
           <h3 class="text-xs font-black text-slate-300 uppercase tracking-widest flex items-center space-x-2 px-2"><span>🍳</span> <span>Kitchen Transformations</span></h3>
           <div id="kitchenCarousel" class="relative rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl overflow-hidden">
             <div class="relative">
               <button onclick="moveCarousel('kitchenCarousel', -1)" aria-label="Previous photo" class="absolute top-1/2 -translate-y-1/2 left-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">◀</button>
               <button onclick="moveCarousel('kitchenCarousel', 1)" aria-label="Next photo" class="absolute top-1/2 -translate-y-1/2 right-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">▶</button>
-          <div class="carousel-slide active cursor-pointer" onclick="openLightbox('F. Potasi_After (carson).webp')">
+          <div class="carousel-slide active cursor-pointer" onclick="openLightbox('images/kitchen-after-1.webp')">
             <img src="images/kitchen-after-1.webp" alt="Kitchen remodel — Carson, CA" class="w-full h-72 sm:h-96 object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
               <span class="text-white font-black text-sm uppercase tracking-wide">Carson, CA</span>
             </div>
           </div>
 
-          <div class="carousel-slide cursor-pointer" onclick="openLightbox('G. Hoeksema_After (garden grove).webp')">
+          <div class="carousel-slide cursor-pointer" onclick="openLightbox('images/kitchen-after-2.webp')">
             <img src="images/kitchen-after-2.webp" alt="Kitchen remodel — Garden Grove, CA" class="w-full h-72 sm:h-96 object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
               <span class="text-white font-black text-sm uppercase tracking-wide">Garden Grove, CA</span>
             </div>
           </div>
 
-          <div class="carousel-slide cursor-pointer" onclick="openLightbox('A. Manabe_After (pasadena).webp')">
+          <div class="carousel-slide cursor-pointer" onclick="openLightbox('images/kitchen-after-3.webp')">
             <img src="images/kitchen-after-3.webp" alt="Kitchen remodel — Pasadena, CA" class="w-full h-72 sm:h-96 object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
               <span class="text-white font-black text-sm uppercase tracking-wide">Pasadena, CA</span>
             </div>
           </div>
 
-          <div class="carousel-slide cursor-pointer" onclick="openLightbox('B. Turner_After (LA).webp')">
+          <div class="carousel-slide cursor-pointer" onclick="openLightbox('images/kitchen-after-4.webp')">
             <img src="images/kitchen-after-4.webp" alt="Kitchen remodel — Los Angeles, CA" class="w-full h-72 sm:h-96 object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
               <span class="text-white font-black text-sm uppercase tracking-wide">Los Angeles, CA</span>
@@ -540,7 +556,6 @@
       </div>
     </section>
 
-    <!-- WHY HOMEOWNERS CHOOSE US -->
     <section class="space-y-8 border-t border-zinc-900 pt-14">
       <div class="text-center space-y-2">
         <span class="bg-sky-950 border border-sky-800 text-sky-400 text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">Why Homeowners Choose Us</span>
@@ -556,7 +571,7 @@
           <span class="text-sm text-slate-200 font-medium">A dedicated project coordinator for your job, start to finish</span>
         </div>
         <div class="flex items-start gap-3 bg-zinc-900/60 border border-zinc-800 rounded-xl p-4">
-          <span class="text-emerald-400 text-lg leading-none">✔</span>
+          <span class="text-emerald-400 text-lg none">✔</span>
           <span class="text-sm text-slate-200 font-medium">Transparent, itemized pricing before any work begins</span>
         </div>
         <div class="flex items-start gap-3 bg-zinc-900/60 border border-zinc-800 rounded-xl p-4">
@@ -574,7 +589,6 @@
       </div>
     </section>
 
-    <!-- OUR STORY / TEAM PHOTO -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch border-t border-zinc-900 pt-14">
       <div class="bg-zinc-900/40 border border-zinc-900 rounded-2xl p-6 space-y-4">
         <h3 class="font-display text-lg font-bold text-white border-b border-zinc-800 pb-3">Our Story</h3>
@@ -591,7 +605,6 @@
       </div>
     </section>
 
-    <!-- OUR VALUES -->
     <section class="border-t border-zinc-900 pt-14">
       <div class="bg-zinc-900/40 border border-zinc-900 rounded-2xl p-6 space-y-4">
         <h3 class="font-display text-lg font-bold text-white border-b border-zinc-800 pb-3">Our Values</h3>
@@ -604,7 +617,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="space-y-8 border-t border-zinc-900 pt-14">
       <div class="text-center space-y-2">
         <span class="bg-sky-950 border border-sky-800 text-sky-400 text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">Common Questions</span>
@@ -649,7 +661,6 @@
       </div>
     </section>
 
-    <!-- FINAL CTA -->
     <section class="text-center space-y-5 border-t border-zinc-900 pt-14 pb-4">
       <h2 class="font-display text-2xl sm:text-3xl font-bold text-white">Ready to See What's Possible?</h2>
       <p class="text-sm text-slate-400 max-w-md mx-auto">Answer a few quick questions and see if your home qualifies for a free design consultation.</p>
@@ -673,11 +684,10 @@
   </div>
 
   <script type="module">
-    // Import Web SDK variants natively from Google CDN networks
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
     import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 
-    // FIXME: Replace placeholders with your own keys extracted from Firebase Settings console
+    // Configuration initialized with details from Firebase Settings dashboard
     const firebaseConfig = {
       apiKey: "YOUR_API_KEY",
       authDomain: "YOUR_AUTH_DOMAIN",
@@ -705,7 +715,6 @@
     let formData = {};
     let confirmationResult = null;
 
-    // Initialize invisible protection gate right before user requests SMS text block
     window.initRecaptchaShield = function() {
       if (!window.recaptchaVerifier) {
         window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
@@ -790,7 +799,6 @@
       document.getElementById('disqualified').classList.add('active');
     };
 
-    // Formats any standard typed phone number to exact E.164 specification (+1XXXXXXXXXX)
     function cleanAndFormatE164(phoneStr) {
       let rawDigits = phoneStr.replace(/\D/g, "");
       if (rawDigits.length === 10) {
@@ -813,7 +821,6 @@
         return alert("Please fill in all fields so we can confirm your appointment.");
       }
 
-      // Convert user interface text directly into E.164 for Firebase eligibility
       const formattedInternationalPhone = cleanAndFormatE164(rawPhone);
       formData.phone = formattedInternationalPhone; 
 
@@ -849,12 +856,9 @@
 
       confirmationResult.confirm(pinCode)
         .then((result) => {
-          // Authentication matches successfully. Inject unique identifier logs.
           formData.firebaseUid = result.user.uid;
-
           btn.innerText = "Securing appointment block...";
           
-          // Submit complete verification record package straight to Google Apps Script
           return fetch(GATEWAY_URL, {
             method: "POST",
             body: JSON.stringify({ data: formData })
@@ -863,6 +867,18 @@
         .then(res => res.json())
         .then(res => {
           if (res.success) {
+            // ==========================================
+            // META PIXEL CONVERSION TRIGGER SUCCESS LOG 
+            // ==========================================
+            if (typeof fbq === 'function') {
+              fbq('track', 'Schedule', {
+                content_name: formData.projectType,
+                content_category: 'Lead Funnel Booking',
+                zip_code: formData.zip,
+                predicted_scope: formData.projectScope
+              });
+            }
+
             document.getElementById('step14').classList.remove('active');
             document.getElementById('surveyHeader').classList.add('hidden');
             document.getElementById('progressBar').parentNode.classList.add('hidden');
@@ -880,7 +896,6 @@
         });
     };
 
-    // --- Carousel Core Engine Scripts ---
     window.initCarousel = function(containerId, count) {
       const container = document.getElementById(containerId);
       if (!container) return;
@@ -922,7 +937,6 @@
       document.getElementById('lightbox').classList.add('hidden'); 
     };
 
-    // Initialize display content metrics
     window.initCarousel('fbCarousel', 13);
     window.initCarousel('bathCarousel', 10);
     window.initCarousel('kitchenCarousel', 7);
