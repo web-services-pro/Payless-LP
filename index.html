@@ -71,20 +71,22 @@
       <div id="quizCard" class="w-full max-w-2xl mx-auto bg-zinc-900 border-2 border-zinc-800/80 rounded-2xl shadow-2xl p-8 sm:p-10 text-left mt-10 relative scroll-mt-24">
 
         <div class="w-full bg-zinc-800 h-2 rounded-full mb-8 overflow-hidden">
-          <div id="progressBar" class="bg-gradient-to-r from-sky-500 to-blue-600 h-full w-[7%] transition-all duration-300"></div>
+          <div id="progressBar" class="bg-gradient-to-r from-sky-500 to-blue-600 h-full w-[12%] transition-all duration-300"></div>
         </div>
 
         <div id="surveyHeader" class="mb-6 border-b border-zinc-800/60 pb-4">
           <h2 id="dynamicMainTitle" class="font-display text-xl font-bold text-white tracking-tight">See If Your Home Qualifies</h2>
-          <p id="dynamicSubTitle" class="text-xs text-slate-400 mt-1">Takes about 60 seconds — No Obligation.</p>
+          <p id="dynamicSubTitle" class="text-xs text-slate-400 mt-1">Takes under 30 seconds — No Obligation.</p>
         </div>
 
+        <!-- STEP 1: Zip Code Check -->
         <div id="step1" class="step active">
           <label class="block text-base font-bold text-slate-200 mb-2">See if Your Property is in Our Approved Service Area - What's your ZIP code?</label>
           <input type="text" id="zip" placeholder="e.g. 91201" class="w-full bg-zinc-950 p-4 border-2 border-zinc-800 rounded-xl text-center text-3xl font-black tracking-widest text-sky-400 focus:outline-none focus:border-sky-500 mb-6 transition" maxlength="5">
           <button onclick="validateZipRadius()" class="w-full bg-sky-700 hover:bg-sky-600 text-white font-extrabold p-4 rounded-xl transition shadow-lg tracking-wider uppercase text-sm">Check My Area</button>
         </div>
 
+        <!-- STEP 2: Kitchen vs Bath -->
         <div id="step2" class="step">
           <label class="block text-base font-bold text-slate-200 mb-6 text-center">What are you looking to remodel?</label>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -99,6 +101,7 @@
           </div>
         </div>
 
+        <!-- STEP 3: Homeowner Filter -->
         <div id="step3" class="step">
           <label class="block text-base font-bold text-slate-200 mb-6 text-center">Do you own your home?</label>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -106,158 +109,64 @@
               <div class="text-4xl mb-2">📜</div>
               <span class="font-bold text-slate-200 block text-sm">Yes, I'm the Homeowner</span>
             </div>
-            <div onclick="disqualify('Thanks for your interest! Because renovation approval requires authorization from the property owner, we are only able to work directly with homeowners at this time. If you own a home elsewhere, we would love to hear from you.')" class="option-box p-6 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+            <div onclick="disqualify('Thanks for your interest! Because renovation approval requires authorization from the property owner, we are only able to work directly with homeowners at this time.')" class="option-box p-6 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
               <div class="text-4xl mb-2">🏢</div>
               <span class="font-bold text-slate-200 block text-sm">No, I Rent</span>
             </div>
           </div>
         </div>
 
+        <!-- STEP 4: Scope Selection -->
         <div id="step4" class="step">
-          <label class="block text-base font-bold text-slate-200 mb-6 text-center">Can all decision-makers for this project attend the design consultation?</label>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div onclick="selectOption('spousePresent', 'Yes (All Decision-Makers Present)', this, 5)" class="option-box p-6 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <div class="text-4xl mb-2">👥</div>
-              <span class="font-bold text-slate-200 block text-sm">Yes, Everyone Can Be There</span>
-            </div>
-            <!-- UPDATED: Advances to Step 5 instead of disqualifying -->
-            <div onclick="selectOption('spousePresent', 'Single Decision Maker / Flexible', this, 5)" class="option-box p-6 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <div class="text-4xl mb-2">👤</div>
-              <span class="font-bold text-slate-200 block text-sm">No, Just Me For Now</span>
-            </div>
-          </div>
-        </div>
-
-        <div id="step5" class="step">
           <label class="block text-base font-bold text-slate-200 mb-6 text-center">What type of project are you envisioning?</label>
 
           <div id="bathScopeOptions" class="space-y-3 hidden">
-            <div onclick="selectOption('projectScope', 'Tub-to-Shower Conversion', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
+            <div onclick="selectOption('projectScope', 'Tub-to-Shower Conversion', this, 5)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
               <div class="text-2xl">🔄</div>
-              <div><span class="font-bold text-slate-200 block text-sm">Tub-to-Shower Conversion</span><span class="text-xs text-slate-400">Replace your tub with a walk-in shower, fully redone from the studs out</span></div>
+              <div><span class="font-bold text-slate-200 block text-sm">Tub-to-Shower Conversion</span><span class="text-xs text-slate-400">Replace your tub with a walk-in shower</span></div>
             </div>
-            <div onclick="selectOption('projectScope', 'Secondary/Guest Bathroom Remodel', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
+            <div onclick="selectOption('projectScope', 'Secondary/Guest Bathroom Remodel', this, 5)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
               <div class="text-2xl">🚿</div>
-              <div><span class="font-bold text-slate-200 block text-sm">Secondary / Guest Bathroom Remodel</span><span class="text-xs text-slate-400">A full refresh — new vanity, fixtures, tile, and finishes</span></div>
+              <div><span class="font-bold text-slate-200 block text-sm">Secondary / Guest Bathroom Remodel</span><span class="text-xs text-slate-400">A full refresh — vanity, fixtures, tile, and finishes</span></div>
             </div>
-            <div onclick="selectOption('projectScope', 'Luxury Master Bathroom Remodel', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
+            <div onclick="selectOption('projectScope', 'Luxury Master Bathroom Remodel', this, 5)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
               <div class="text-2xl">👑</div>
-              <div><span class="font-bold text-slate-200 block text-sm">Luxury Master Bathroom Remodel</span><span class="text-xs text-slate-400">A spa-level transformation of your primary bathroom, designed to last</span></div>
+              <div><span class="font-bold text-slate-200 block text-sm">Luxury Master Bathroom Remodel</span><span class="text-xs text-slate-400">A complete spa-level transformation</span></div>
             </div>
           </div>
 
           <div id="kitchenScopeOptions" class="space-y-3 hidden">
-            <div onclick="selectOption('projectScope', 'Cabinet Refacing', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
+            <div onclick="selectOption('projectScope', 'Cabinet Refacing', this, 5)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
               <div class="text-2xl">🎛️</div>
-              <div><span class="font-bold text-slate-200 block text-sm">Cabinet Refacing</span><span class="text-xs text-slate-400">New doors, drawers, and soft-close hardware for a dramatic look without a full teardown</span></div>
+              <div><span class="font-bold text-slate-200 block text-sm">Cabinet Refacing</span><span class="text-xs text-slate-400">New doors and hardware without full teardown</span></div>
             </div>
-            <div onclick="selectOption('projectScope', 'Full Kitchen Remodel', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
+            <div onclick="selectOption('projectScope', 'Full Kitchen Remodel', this, 5)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-4 hover:border-zinc-700 transition">
               <div class="text-2xl">🍳</div>
-              <div><span class="font-bold text-slate-200 block text-sm">Full Kitchen Remodel</span><span class="text-xs text-slate-400">Cabinets, countertops, backsplash, and layout — reimagined from the ground up</span></div>
+              <div><span class="font-bold text-slate-200 block text-sm">Full Kitchen Remodel</span><span class="text-xs text-slate-400">Cabinets, countertops, backsplash, and layout reimagined</span></div>
             </div>
           </div>
         </div>
 
-        <div id="step6" class="step">
-          <label id="renovationAgeLabel" class="block text-base font-bold text-slate-200 mb-6 text-center">When was your space last updated?</label>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div onclick="selectOption('lastRenovation', 'Under 5 Years', this, 7)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <span class="font-bold text-slate-200 text-sm">Under 5 Years</span>
-            </div>
-            <div onclick="selectOption('lastRenovation', '5-10 Years Ago', this, 7)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <span class="font-bold text-slate-200 text-sm">5–10 Years Ago</span>
-            </div>
-            <div onclick="selectOption('lastRenovation', '10-20 Years Ago', this, 7)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <span class="font-bold text-slate-200 text-sm">10–20 Years Ago</span>
-            </div>
-            <div onclick="selectOption('lastRenovation', 'Over 20 Years Ago', this, 7)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <span class="font-bold text-slate-200 text-sm">Over 20 Years Ago</span>
-            </div>
-          </div>
-        </div>
-
-        <div id="step7" class="step">
-          <label class="block text-base font-bold text-slate-200 mb-4 text-center">Are you keeping the current layout, or moving plumbing/walls?</label>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div onclick="selectOption('layoutChange', 'Keeping Current Layout', this, 8)" class="option-box p-5 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <div class="text-2xl mb-2">📐</div>
-              <span class="font-bold text-slate-200 block text-xs">Keep Layout (Recommended)</span>
-            </div>
-            <div onclick="disqualify('Projects that involve moving walls or main plumbing lines require a different scope than what we offer. We focus on premium remodels within your existing layout, with no lengthy permitting delays and no structural surprises. If your plans change, we would love to hear from you.')" class="option-box p-5 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <div class="text-2xl mb-2">🧱</div>
-              <span class="font-bold text-slate-200 block text-xs">Move Walls or Plumbing</span>
-            </div>
-          </div>
-        </div>
-
-        <div id="step8" class="step">
-          <label class="block text-base font-bold text-slate-200 mb-6 text-center">What's your comfortable budget range you have planned for this project?</label>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div onclick="selectOption('budget', '$15,000 – $30,000', this, 9)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <span class="font-bold text-sky-400 text-sm">$15,000 – $30,000</span>
-            </div>
-            <div onclick="selectOption('budget', '$30,000 – $50,000', this, 9)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <span class="font-bold text-sky-400 text-sm">$30,000 – $50,000</span>
-            </div>
-            <div onclick="selectOption('budget', '$50,000 – $75,000', this, 9)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <span class="font-bold text-sky-400 text-sm">$50,000 – $75,000</span>
-            </div>
-            <div onclick="selectOption('budget', '$75,000+', this, 9)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <span class="font-bold text-sky-400 text-sm">$75,000+</span>
-            </div>
-          </div>
-        </div>
-
-        <div id="step9" class="step">
-          <label class="block text-base font-bold text-slate-200 mb-6 text-center">How would you like to structure payment for this project?</label>
-          <div class="space-y-3">
-            <div onclick="setFundingTypePath('0% Interest Financing (12 Months)', 10)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center justify-between hover:border-zinc-700 transition">
-              <div>
-                <span class="font-bold text-slate-200 text-sm block">Finance the Project</span>
-                <span class="text-xs text-slate-400 mt-0.5">0% interest for 12 months, subject to credit approval</span>
-              </div>
-            </div>
-            <div onclick="setFundingTypePath('Cash / Direct Payment (No Financing)', 11)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center justify-between hover:border-zinc-700 transition">
-              <div>
-                <span class="font-bold text-slate-200 text-sm block">Pay Directly</span>
-                <span class="text-xs text-slate-400 mt-0.5">Cash, check, or home equity</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="step10" class="step">
-          <label class="block text-base font-bold text-slate-200 mb-2 text-center">Quick Financing Pre-Check</label>
-          <p class="text-xs text-slate-400 text-center mb-6">This is a quick, informal check — it won't affect your credit score. Estimated payments start around $150–$249/month.</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div onclick="selectOption('creditCheck', 'Good Credit (620+)', this, 11)" class="option-box p-5 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <span class="font-bold text-slate-200 block text-sm">My Credit is Good (620+)</span>
-            </div>
-            <div onclick="selectOption('creditCheck', 'Under 620 or Unsure', this, 11)" class="option-box p-5 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
-              <span class="font-bold text-slate-200 block text-sm">Under 620 or Unsure</span>
-            </div>
-          </div>
-        </div>
-
-        <div id="step11" class="step">
+        <!-- STEP 5: Timeline -->
+        <div id="step5" class="step">
           <label class="block text-base font-bold text-slate-200 mb-6 text-center">When are you hoping to start?</label>
           <div class="space-y-3">
-            <div onclick="selectOption('constructionTimeline', 'As Soon As Possible', this, 12)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-3 hover:border-zinc-700 transition">
+            <div onclick="selectOption('constructionTimeline', 'As Soon As Possible', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-3 hover:border-zinc-700 transition">
               <span class="text-xl">⚡</span> <span class="font-bold text-slate-200 text-sm">As Soon As Possible</span>
             </div>
-            <div onclick="selectOption('constructionTimeline', 'Within 1-3 Months', this, 12)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-3 hover:border-zinc-700 transition">
+            <div onclick="selectOption('constructionTimeline', 'Within 1-3 Months', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-3 hover:border-zinc-700 transition">
               <span class="text-xl">📅</span> <span class="font-bold text-slate-200 text-sm">Within 1–3 Months</span>
             </div>
-            <div onclick="selectOption('constructionTimeline', 'Just Exploring For Now', this, 12)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-3 hover:border-zinc-700 transition">
+            <div onclick="selectOption('constructionTimeline', 'Just Exploring For Now', this, 6)" class="option-box p-4 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer flex items-center space-x-3 hover:border-zinc-700 transition">
               <span class="text-xl">🔍</span> <span class="font-bold text-slate-200 text-sm">Just Exploring for Now</span>
             </div>
           </div>
         </div>
 
-        <!-- NEW STEP 12: Contact Details (Captures Lead First) -->
-        <div id="step12" class="step">
+        <!-- STEP 6: Contact Info (LEAD CAPTURED HERE) -->
+        <div id="step6" class="step">
           <label class="block text-base font-bold text-slate-200 mb-2 text-center">Where should we send your quote & consultation details?</label>
-          <p class="text-xs text-slate-400 text-center mb-5">Takes 30 seconds — No spam, ever.</p>
+          <p class="text-xs text-slate-400 text-center mb-5">No spam, ever. Your privacy is protected.</p>
           <div class="space-y-3">
             <div class="grid grid-cols-2 gap-3">
               <input type="text" id="firstname" placeholder="First Name" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
@@ -268,12 +177,12 @@
             <input type="text" id="address" placeholder="Street Address (For local area mapping)" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
             <input type="text" id="city" placeholder="City" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
 
-            <button onclick="saveLeadAndAdvanceToCalendar()" id="leadBtn" class="w-full bg-sky-700 hover:bg-sky-600 text-white font-bold p-4 rounded-xl transition shadow-lg uppercase text-xs tracking-wider mt-2">Continue to Select Date & Time &rarr;</button>
+            <button onclick="saveLeadAndAdvanceToCalendar()" id="leadBtn" class="w-full bg-sky-700 hover:bg-sky-600 text-white font-bold p-4 rounded-xl transition shadow-lg uppercase text-xs tracking-wider mt-2">Continue to Preferred Date & Time &rarr;</button>
           </div>
         </div>
 
-        <!-- NEW STEP 13: Calendar Picker + Verification Trigger -->
-        <div id="step13" class="step">
+        <!-- STEP 7: Preferred Date/Time -->
+        <div id="step7" class="step">
           <label class="block text-base font-bold text-slate-200 mb-4 text-center">Choose a Preferred Time for Your Free Consultation</label>
           <div class="space-y-4">
             <div>
@@ -290,14 +199,15 @@
             </div>
 
             <p class="text-[10px] text-slate-500 leading-normal text-justify px-1 py-1.5 font-medium">
-              By clicking below, you provide your express written consent for Payless Kitchens & Baths to contact you by phone call or automated SMS text message about your project. Message and data rates may apply. Reply STOP to opt out.
+              By clicking below, you provide express written consent for Payless Kitchens & Baths to contact you by phone call or automated SMS text message about your project. Message and data rates may apply. Reply STOP to opt out.
             </p>
 
             <button onclick="triggerSmsOtpPipeline()" id="smsBtn" class="w-full bg-sky-700 hover:bg-sky-600 text-white font-bold p-4 rounded-xl transition shadow-lg uppercase text-xs tracking-wider">Proceed To Confirm Your Appointment Slot</button>
           </div>
         </div>
-        
-        <div id="step14" class="step text-center">
+
+        <!-- STEP 8: Verification Code Pin Input -->
+        <div id="step8" class="step text-center">
           <div class="text-4xl mb-2">🔒</div>
           <label class="block text-base font-bold text-slate-100 mb-1">Enter Your Verification Code</label>
           <p class="text-xs text-slate-400 max-w-sm mx-auto mb-6">We just texted a 6-digit code to your phone. Enter it below to confirm your appointment.</p>
@@ -305,18 +215,20 @@
           <button onclick="verifyTokenAndSubmit()" id="verifyBtn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold p-4 rounded-xl transition shadow-lg uppercase text-xs tracking-wider">Confirm Appointment</button>
         </div>
 
+        <!-- DISQUALIFIED SCREEN -->
         <div id="disqualified" class="step text-center py-6">
           <div class="text-5xl mb-4">🙏</div>
           <h2 class="font-display text-lg font-bold text-red-400 mb-2">Thanks for Your Interest</h2>
           <p id="disqualify_reason" class="text-slate-300 text-xs leading-relaxed max-w-sm mx-auto"></p>
         </div>
 
+        <!-- SUCCESS SCREEN -->
         <div id="success" class="step text-center py-6">
           <div class="text-5xl mb-4">🎉</div>
           <h2 class="font-display text-xl font-bold text-emerald-400 mb-2">Your Consultation is Confirmed!</h2>
-          <p class="text-slate-300 text-xs max-w-sm mx-auto leading-relaxed">We've got everything we need. A member of our design team will call you within 24 hours to confirm the details and answer any questions before your visit. Please mark the meeting in your Calendar Now before you leave! We're looking forward to meeting with you...</p>
+          <p class="text-slate-300 text-xs max-w-sm mx-auto leading-relaxed">We've got everything we need. A member of our design team will call you within 24 hours to confirm the details and answer any questions before your visit. We're looking forward to meeting with you!</p>
         </div>
-
+        
       </div>
     </div>
   </section>
@@ -720,17 +632,18 @@
     };
 
     function updateProgress() {
-      const percentage = (currentStep / 14) * 100;
+      // 8 total steps in streamlined quiz
+      const percentage = (currentStep / 8) * 100;
       document.getElementById('progressBar').style.width = `${percentage}%`;
     }
-
+    
     window.advanceToNextStep = function(stepNum) {
       document.getElementById(`step${currentStep}`).classList.remove('active');
       currentStep = stepNum;
       document.getElementById(`step${currentStep}`).classList.add('active');
       updateProgress();
     };
-
+    
     window.validateZipRadius = function() {
       const entry = document.getElementById('zip').value.trim();
       if (TARGET_ZIP_CODES.includes(entry)) {
@@ -740,11 +653,9 @@
         window.disqualify("Thanks for your interest! Right now we are only able to take on projects within about 70 miles of Glendale, CA, and your ZIP code falls outside that service area. We would love to help if that changes in the future.");
       }
     };
-
+    
     window.executeProjectBranch = function(selection, element) {
       formData.projectType = selection;
-      const segmentTerm = (selection === 'Kitchen Remodel') ? "kitchen" : "bathroom";
-      document.getElementById('renovationAgeLabel').innerText = `When was your ${segmentTerm} last updated?`;
 
       if (selection === 'Kitchen Remodel') {
         document.getElementById('kitchenScopeOptions').classList.remove('hidden');
@@ -759,7 +670,7 @@
       element.classList.add('selected');
       setTimeout(() => { window.advanceToNextStep(3); }, 350);
     };
-
+    
     window.selectOption = function(field, val, el, nextStepNum) {
       formData[field] = val;
       const brothers = el.parentNode.children;
@@ -768,16 +679,6 @@
       setTimeout(() => { window.advanceToNextStep(nextStepNum); }, 350);
     };
 
-    window.setFundingTypePath = function(val, nextStepNum) {
-      formData.fundingType = val;
-      if (val.includes("Cash")) {
-        formData.creditCheck = "Not Applicable (Paying Directly)";
-        window.advanceToNextStep(11);
-      } else {
-        window.advanceToNextStep(nextStepNum);
-      }
-    };
-    
     window.disqualify = function(reasonText) {
       document.getElementById(`step${currentStep}`).classList.remove('active');
       document.getElementById('surveyHeader').classList.add('hidden');
