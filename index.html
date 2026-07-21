@@ -815,6 +815,17 @@
       const formattedInternationalPhone = cleanAndFormatE164(rawPhone);
       formData.phone = formattedInternationalPhone; 
 
+      // ===== INSERT LEAD EVENT HERE - START =====
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', {
+          content_name: formData.projectType || 'Kitchen_Bath_Remodel',
+          content_category: 'Lead Funnel - OTP Requested',
+          city: formData.city,
+          zip_code: formData.zip || ''
+        });
+      }
+      // ===== INSERT LEAD EVENT HERE - END =====
+      
       const btn = document.getElementById('smsBtn');
       btn.innerText = "Initializing security check...";
       btn.disabled = true;
