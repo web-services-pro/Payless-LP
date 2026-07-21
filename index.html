@@ -813,7 +813,8 @@
       }
 
       const formattedInternationalPhone = cleanAndFormatE164(rawPhone);
-      formData.phone = formattedInternationalPhone; 
+      formData.phone = formattedInternationalPhone;
+      formData.status = "Partial Lead (OTP Pending)"; // <--- Track status in Sheet!
 
       // ===== INSERT LEAD EVENT HERE - START =====
       if (typeof fbq === 'function') {
@@ -824,8 +825,14 @@
           zip_code: formData.zip || ''
         });
       }
-      // ===== INSERT LEAD EVENT HERE - END =====
       
+      // SILENTLY PUSH PARTIAL LEAD TO GOOGLE SHEETS RIGHT NOW!
+      fetch(GATEWAY_URL, {
+        method: "POST",
+        body: JSON.stringify({ data: formData })
+      }).catch(e => console.log("Partial logging skipped", e));
+
+      // Proceed to Firebase SMS OTP
       const btn = document.getElementById('smsBtn');
       btn.innerText = "Initializing security check...";
       btn.disabled = true;
