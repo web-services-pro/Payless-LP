@@ -120,9 +120,10 @@
               <div class="text-4xl mb-2">👥</div>
               <span class="font-bold text-slate-200 block text-sm">Yes, Everyone Can Be There</span>
             </div>
-            <div onclick="disqualify('To make sure your consultation is as productive as possible, we ask that everyone involved in the decision be present, so we can answer every question in one visit. Please reach back out once everyone is available to attend together.')" class="option-box p-6 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
+            <!-- UPDATED: Advances to Step 5 instead of disqualifying -->
+            <div onclick="selectOption('spousePresent', 'Single Decision Maker / Flexible', this, 5)" class="option-box p-6 border-2 border-zinc-800 bg-zinc-950 rounded-xl cursor-pointer text-center hover:border-zinc-700 transition">
               <div class="text-4xl mb-2">👤</div>
-              <span class="font-bold text-slate-200 block text-sm">No, Not Everyone</span>
+              <span class="font-bold text-slate-200 block text-sm">No, Just Me For Now</span>
             </div>
           </div>
         </div>
@@ -253,8 +254,27 @@
           </div>
         </div>
 
+        <!-- NEW STEP 12: Contact Details (Captures Lead First) -->
         <div id="step12" class="step">
-          <label class="block text-base font-bold text-slate-200 mb-4 text-center">Choose a Time for Your Free Design Consultation</label>
+          <label class="block text-base font-bold text-slate-200 mb-2 text-center">Where should we send your quote & consultation details?</label>
+          <p class="text-xs text-slate-400 text-center mb-5">Takes 30 seconds — No spam, ever.</p>
+          <div class="space-y-3">
+            <div class="grid grid-cols-2 gap-3">
+              <input type="text" id="firstname" placeholder="First Name" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+              <input type="text" id="lastname" placeholder="Last Name" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+            </div>
+            <input type="tel" id="phone" placeholder="Mobile Phone (e.g. 516-759-3334)" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+            <input type="email" id="email" placeholder="Email Address" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+            <input type="text" id="address" placeholder="Street Address (For local area mapping)" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+            <input type="text" id="city" placeholder="City" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+
+            <button onclick="saveLeadAndAdvanceToCalendar()" id="leadBtn" class="w-full bg-sky-700 hover:bg-sky-600 text-white font-bold p-4 rounded-xl transition shadow-lg uppercase text-xs tracking-wider mt-2">Continue to Select Date & Time &rarr;</button>
+          </div>
+        </div>
+
+        <!-- NEW STEP 13: Calendar Picker + Verification Trigger -->
+        <div id="step13" class="step">
+          <label class="block text-base font-bold text-slate-200 mb-4 text-center">Choose a Preferred Time for Your Free Consultation</label>
           <div class="space-y-4">
             <div>
               <label class="text-[10px] font-black text-slate-400 block mb-1 uppercase tracking-widest">Preferred Date</label>
@@ -268,30 +288,15 @@
                 <option value="06:00pm">Evening: 6:00 PM – 7:00 PM</option>
               </select>
             </div>
-            <button onclick="commitCalendarMatrix()" class="w-full mt-2 bg-sky-700 hover:bg-sky-600 text-white font-bold p-4 rounded-xl transition shadow-lg uppercase text-xs tracking-wider">Confirm My Appointment</button>
-          </div>
-        </div>
-
-        <div id="step13" class="step">
-          <label class="block text-base font-bold text-slate-200 mb-4 text-center">Almost done! Where should we send your confirmation?</label>
-          <div class="space-y-3">
-            <div class="grid grid-cols-2 gap-3">
-              <input type="text" id="firstname" placeholder="First Name" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
-              <input type="text" id="lastname" placeholder="Last Name" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
-            </div>
-            <input type="tel" id="phone" placeholder="Mobile Phone (e.g. 516-759-3334)" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
-            <input type="email" id="email" placeholder="Email Address" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
-            <input type="text" id="address" placeholder="Property Street Address" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
-            <input type="text" id="city" placeholder="City" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
 
             <p class="text-[10px] text-slate-500 leading-normal text-justify px-1 py-1.5 font-medium">
-              By clicking below, you provide your express written consent for Payless Kitchens & Baths and its representatives to contact you by phone call or automated SMS text message about your project. Message and data rates may apply, and you can opt out anytime by replying STOP. Your information is encrypted and will never be shared or sold to third parties.
+              By clicking below, you provide your express written consent for Payless Kitchens & Baths to contact you by phone call or automated SMS text message about your project. Message and data rates may apply. Reply STOP to opt out.
             </p>
 
             <button onclick="triggerSmsOtpPipeline()" id="smsBtn" class="w-full bg-sky-700 hover:bg-sky-600 text-white font-bold p-4 rounded-xl transition shadow-lg uppercase text-xs tracking-wider">Send My Verification Code</button>
           </div>
         </div>
-
+        
         <div id="step14" class="step text-center">
           <div class="text-4xl mb-2">🔒</div>
           <label class="block text-base font-bold text-slate-100 mb-1">Enter Your Verification Code</label>
@@ -772,16 +777,7 @@
         window.advanceToNextStep(nextStepNum);
       }
     };
-
-    window.commitCalendarMatrix = function() {
-      const targetDate = document.getElementById('appointment_date').value;
-      if (!targetDate) return alert("Please select a date to continue.");
-      const [year, month, day] = targetDate.split('-');
-      formData.adate = `${month}/${day}/${year}`;
-      formData.atime = document.getElementById('appointment_time').value;
-      window.advanceToNextStep(13);
-    };
-
+    
     window.disqualify = function(reasonText) {
       document.getElementById(`step${currentStep}`).classList.remove('active');
       document.getElementById('surveyHeader').classList.add('hidden');
@@ -800,7 +796,8 @@
       return "+" + rawDigits; 
     }
 
-    window.triggerSmsOtpPipeline = function() {
+    // 1. NEW FUNCTION: Saves Lead info instantly and moves to calendar
+    window.saveLeadAndAdvanceToCalendar = function() {
       formData.firstname = document.getElementById('firstname').value.trim();
       formData.lastname = document.getElementById('lastname').value.trim();
       let rawPhone = document.getElementById('phone').value.trim();
@@ -809,38 +806,69 @@
       formData.city = document.getElementById('city').value.trim();
 
       if (!formData.firstname || !rawPhone || !formData.email || !formData.address || !formData.city) {
-        return alert("Please fill in all fields so we can confirm your appointment.");
+        return alert("Please fill in all fields so we can process your consultation request.");
       }
 
       const formattedInternationalPhone = cleanAndFormatE164(rawPhone);
-      formData.phone = formattedInternationalPhone;
-      formData.status = "Partial Lead (OTP Pending)"; // <--- Track status in Sheet!
+      formData.phone = formattedInternationalPhone; 
+      formData.status = "Partial Lead (Form Complete)";
 
-      // ===== INSERT LEAD EVENT HERE - START =====
+      const btn = document.getElementById('leadBtn');
+      btn.innerText = "Saving contact details...";
+      btn.disabled = true;
+
+      // Meta Pixel Lead Event
       if (typeof fbq === 'function') {
         fbq('track', 'Lead', {
           content_name: formData.projectType || 'Kitchen_Bath_Remodel',
-          content_category: 'Lead Funnel - OTP Requested',
+          content_category: 'Lead Funnel - Contact Captured',
           city: formData.city,
           zip_code: formData.zip || ''
         });
       }
-      
-      // SILENTLY PUSH PARTIAL LEAD TO GOOGLE SHEETS RIGHT NOW!
+
+      // SILENTLY POST PARTIAL LEAD TO GOOGLE SHEETS IMMEDIATELY!
       fetch(GATEWAY_URL, {
         method: "POST",
         body: JSON.stringify({ data: formData })
-      }).catch(e => console.log("Partial logging skipped", e));
+      })
+      .then(() => {
+        btn.innerText = "Continue to Select Date & Time →";
+        btn.disabled = false;
+        window.advanceToNextStep(13);
+      })
+      .catch((err) => {
+        console.error("Partial logging error:", err);
+        btn.innerText = "Continue to Select Date & Time →";
+        btn.disabled = false;
+        window.advanceToNextStep(13);
+      });
+    };
 
-      // Proceed to Firebase SMS OTP
+    // 2. UPDATED FUNCTION: Captures Calendar date & triggers Firebase SMS
+    window.triggerSmsOtpPipeline = function() {
+      const targetDate = document.getElementById('appointment_date').value;
+      if (!targetDate) return alert("Please select a preferred date to continue.");
+
+      const [year, month, day] = targetDate.split('-');
+      formData.adate = `${month}/${day}/${year}`;
+      formData.atime = document.getElementById('appointment_time').value;
+      formData.status = "Partial Lead (OTP Sent)";
+
       const btn = document.getElementById('smsBtn');
       btn.innerText = "Initializing security check...";
       btn.disabled = true;
 
+      // Sync calendar selection to Google Sheet
+      fetch(GATEWAY_URL, {
+        method: "POST",
+        body: JSON.stringify({ data: formData })
+      }).catch(e => console.log("Time sync skipped", e));
+
       window.initRecaptchaShield();
       const appVerifier = window.recaptchaVerifier;
 
-      signInWithPhoneNumber(auth, formattedInternationalPhone, appVerifier)
+      signInWithPhoneNumber(auth, formData.phone, appVerifier)
         .then((result) => {
           confirmationResult = result;
           window.advanceToNextStep(14);
@@ -849,12 +877,10 @@
           alert("Firebase SMS failed to transmit: " + error.message);
           btn.innerText = "Send My Verification Code";
           btn.disabled = false;
-          if (window.recaptchaVerifier) {
-            window.recaptchaVerifier.render().then(widgetId => grecaptcha.reset(widgetId));
-          }
         });
     };
 
+    // 3. UPDATED FUNCTION: Confirms PIN, updates status to "Verified", and fires Schedule event
     window.verifyTokenAndSubmit = function() {
       const pinCode = document.getElementById('otp_input').value.trim();
       if (!pinCode || pinCode.length !== 6) return alert("Please enter the 6-digit confirmation pin.");
@@ -866,6 +892,7 @@
       confirmationResult.confirm(pinCode)
         .then((result) => {
           formData.firebaseUid = result.user.uid;
+          formData.status = "Verified Appointment Booked";
           btn.innerText = "Securing appointment block...";
           
           return fetch(GATEWAY_URL, {
@@ -876,9 +903,7 @@
         .then(res => res.json())
         .then(res => {
           if (res.success) {
-            // ==========================================
-            // META PIXEL CONVERSION TRIGGER SUCCESS LOG 
-            // ==========================================
+            // META PIXEL SCHEDULE CONVERSION TRIGGER
             if (typeof fbq === 'function') {
               fbq('track', 'Schedule', {
                 content_name: formData.projectType,
