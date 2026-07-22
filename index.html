@@ -7,7 +7,7 @@
   <meta name="description" content="Free kitchen and bathroom design consultation from Payless Kitchens & Baths — family-owned since 1985, BBB A+ rated. See if your home qualifies.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://lp-otp-sms.firebaseapp.com">
+  <link rel="preconnect" href="https://lp-otp-sms.firebaseapp.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tailwind-prod.css">
   <style>
@@ -337,7 +337,7 @@
       <div id="videoContainer" class="relative w-full rounded-2xl overflow-hidden border-2 border-zinc-800/80 shadow-2xl bg-zinc-950 cursor-pointer group" style="padding-top: 56.25%;" onclick="loadYouTubeIframe()">
         <!-- High-res YouTube Cover Image -->
         <img id="videoPoster" 
-             src="https://img.youtube.com/vi/SPNBU9r_mnQ/maxresdefault.jpg" 
+             src="https://img.youtube.com/vi/SPNBU9r_mnQ/hqdefault.jpg"
              alt="Meet Payless Video Preview" 
              loading="lazy" 
              class="absolute top-0 left-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
@@ -690,7 +690,7 @@
               <button onclick="moveCarousel('bathCarousel', -1)" aria-label="Previous photo" class="absolute top-1/2 -translate-y-1/2 left-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">◀</button>
               <button onclick="moveCarousel('bathCarousel', 1)" aria-label="Next photo" class="absolute top-1/2 -translate-y-1/2 right-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">▶</button>
           <div class="carousel-slide active cursor-pointer" onclick="openLightbox('images/bathroom-after-1.webp')">
-            <img src="images/bathroom-after-1.webp" alt="Bathroom remodel — Upland, CA" loading="lazy" class="w-full h-72 sm:h-96 object-cover">
+            <img src="images/bathroom-after-1.webp" alt="Bathroom remodel — Upland, CA" loading="lazy" width="756" height="504" class="w-full h-72 sm:h-96 object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
               <span class="text-white font-black text-sm uppercase tracking-wide">Upland, CA</span>
             </div>
@@ -770,7 +770,7 @@
               <button onclick="moveCarousel('kitchenCarousel', -1)" aria-label="Previous photo" class="absolute top-1/2 -translate-y-1/2 left-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">◀</button>
               <button onclick="moveCarousel('kitchenCarousel', 1)" aria-label="Next photo" class="absolute top-1/2 -translate-y-1/2 right-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">▶</button>
           <div class="carousel-slide active cursor-pointer" onclick="openLightbox('images/kitchen-after-1.webp')">
-            <img src="images/kitchen-after-1.webp" alt="Kitchen remodel — Carson, CA" loading="lazy" class="w-full h-72 sm:h-96 object-cover">
+            <img src="images/kitchen-after-1.webp" alt="Kitchen remodel — Carson, CA" loading="lazy" width="756" height="504" class="w-full h-72 sm:h-96 object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-14 pointer-events-none">
               <span class="text-white font-black text-sm uppercase tracking-wide">Carson, CA</span>
             </div>
@@ -984,7 +984,17 @@
     };
 
     const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    
+    // 2. Set auth to null initially so iframe.js does NOT load on page start!
+    let auth = null;
+
+    // 3. Helper function to initialize Auth ONLY when needed
+    function getFirebaseAuth() {
+      if (!auth) {
+        auth = getAuth(app);
+      }
+      return auth;
+    }
 
     const GATEWAY_URL = "https://script.google.com/macros/s/AKfycbyi1a5nJRWFayxUzSvi7SHuXANvGXs1L9HPuaf-46hfvNLHZ8wH-DtHh7Uqeo-RypnS/exec";
 
@@ -1144,10 +1154,13 @@
         body: JSON.stringify({ data: formData })
       }).catch(e => console.log("Time sync skipped", e));
 
+      // LAZY INITIALIZE FIREBASE AUTH ONLY NOW!
+      const activeAuth = getFirebaseAuth();
+
       window.initRecaptchaShield();
       const appVerifier = window.recaptchaVerifier;
 
-      signInWithPhoneNumber(auth, formData.phone, appVerifier)
+      signInWithPhoneNumber(activeAuth, formData.phone, appVerifier)
         .then((result) => {
           confirmationResult = result;
           window.advanceToNextStep(8);
