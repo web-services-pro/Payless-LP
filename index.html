@@ -1018,13 +1018,13 @@
       .then(() => {
         btn.innerText = "Continue to Select Date & Time →";
         btn.disabled = false;
-        window.advanceToNextStep(13);
+        window.advanceToNextStep(7);
       })
       .catch((err) => {
         console.error("Partial logging error:", err);
         btn.innerText = "Continue to Select Date & Time →";
         btn.disabled = false;
-        window.advanceToNextStep(13);
+        window.advanceToNextStep(7);
       });
     };
 
@@ -1054,7 +1054,7 @@
       signInWithPhoneNumber(auth, formData.phone, appVerifier)
         .then((result) => {
           confirmationResult = result;
-          window.advanceToNextStep(14);
+          window.advanceToNextStep(8);
         })
         .catch((error) => {
           alert("Firebase SMS failed to transmit: " + error.message);
@@ -1096,7 +1096,7 @@
               });
             }
 
-            document.getElementById('step14').classList.remove('active');
+            document.getElementById('step8').classList.remove('active');
             document.getElementById('surveyHeader').classList.add('hidden');
             document.getElementById('progressBar').parentNode.classList.add('hidden');
             document.getElementById('success').classList.add('active');
