@@ -268,313 +268,56 @@
     <section class="space-y-4">
       <div class="text-center">
         <h2 class="font-display text-2xl sm:text-3xl font-bold text-white">What Our Clients Are Saying</h2>
-        <p class="text-xs sm:text-sm text-slate-300 mt-1">
-          Real reviews from <a href="https://www.facebook.com/PaylessBathMakeover/reviews/" target="_blank" rel="noopener noreferrer" class="text-sky-400 underline hover:text-sky-300 font-semibold transition">Our Facebook Page</a>
-        </p>
+        <p class="text-xs text-slate-200 mt-0.5">Real reviews from our Facebook page</p>
       </div>
 
-      <div id="fbCarousel" class="relative rounded-2xl border border-zinc-800 bg-zinc-900/60 shadow-2xl overflow-hidden py-8 px-4 sm:px-16">
-        
-        <!-- LEFT ARROW BUTTON -->
-        <button onclick="moveCarousel('fbCarousel', -1)" aria-label="Previous review" class="absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 z-20 bg-zinc-800 hover:bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition border border-zinc-700 shadow-xl cursor-pointer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </button>
-
-        <!-- RIGHT ARROW BUTTON -->
-        <button onclick="moveCarousel('fbCarousel', 1)" aria-label="Next review" class="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 z-20 bg-zinc-800 hover:bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition border border-zinc-700 shadow-xl cursor-pointer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
-        
-        <div class="flex items-center justify-center">
-          
-          <!-- REVIEW 1: Gurinderjit Kaur -->
-          <div class="carousel-slide active w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-sky-950 text-sky-400 font-black flex items-center justify-center border border-sky-800 text-sm flex-shrink-0">GK</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Gurinderjit Kaur</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about a month ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "The team at Payless did a good job with my new bathroom. They were professional and did not make a mess. Thank you for the great work."
-              </p>
+      <div id="fbCarousel" class="relative rounded-2xl border border-zinc-800 bg-zinc-900/60 shadow-2xl overflow-hidden">
+        <div class="relative">
+          <button onclick="moveCarousel('fbCarousel', -1)" aria-label="Previous review" class="absolute top-1/2 -translate-y-1/2 left-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">◀</button>
+          <button onclick="moveCarousel('fbCarousel', 1)" aria-label="Next review" class="absolute top-1/2 -translate-y-1/2 right-3 z-10 bg-zinc-950/70 hover:bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/50 text-white w-9 h-9 rounded-full flex items-center justify-center transition">▶</button>
+          <div class="flex items-center justify-center py-6 px-4">
+            <div class="carousel-slide active w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fgurinderjit.kaur.771%2Fposts%2Fpfbid02qZzt8CeVr5reLc263Nzg9qP1kXCy8Jb9Gh8We6JJx3NjpwWzA4DzQaG6kRTNR6V6l&show_text=true&width=500" width="100%" height="168" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fellen.higgins.79%2Fposts%2Fpfbid0KTQJQA53rzkDs2X5HCVZYKfePsYkVdW6SrZiH6LkQThYnnN28GGGKJcUtnwkaafJl&show_text=true&width=500" width="100%" height="168" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fbreabrowns%2Fposts%2Fpfbid027tJfbYKobdJ89k896NUr9mqpDQxkyFXM8CxX5GTKHKkAmpGAmtbTiS6NGpQCGPeGl&show_text=true&width=500" width="100%" height="246" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fchrisitne.romero%2Fposts%2Fpfbid02FYToTnqDH3cSjsxqN3v1vyZWvjukYPeuSjCyXjw4g6XrskEe4UuBTzjLtHa9KikVl&show_text=true&width=500" width="100%" height="246" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fharold.anderson.5%2Fposts%2Fpfbid025QND4Rar1XXjgc7LQEArSbSTpztDCq9Kt9jRZcjJKQmTs139DaJeQRhU2M2RfGf8l&show_text=true&width=500" width="100%" height="265" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fdaphne.tanori%2Fposts%2Fpfbid02J9ieeV954z56joudCBBMvbLzFNuWEMUcK7UuMMVAMmTWFT22gLe44fwn6PoUPFMrl&show_text=true&width=500" width="100%" height="207" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02F7tcLC1vPqZPWkCJh9hTN3Q4JuJxcMZhrSvKEo76tDnahCS7KC85ps2YQqX322y6l%26id%3D61569887472233&show_text=true&width=500" width="100%" height="246" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fralph.seaman%2Fposts%2Fpfbid0WTQck9ERQ5N8b4cYkTKQoQS79qE24qvXfHgC2E9LhbKFRDQP8B5JGEWe5ckD7rZCl&show_text=true&width=500" width="100%" height="207" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FDr.joseph.d.lockhart%2Fposts%2Fpfbid022J4U3pWwGYZnqu9i9TgFbM34HaxCTbvnBkyaYP8Seq4p951j5YGNAoTmjHAdr3sFl&show_text=true&width=500" width="100%" height="207" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fterri.gruenthal%2Fposts%2Fpfbid05mZ6nxuHYQio6nRcXE8VqKDtasqBN6DAFaiwkXE47PAkUAZqWhq3RQ6gP5CUTgZ1l&show_text=true&width=500" width="100%" height="226" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fbarton.wong.942%2Fposts%2Fpfbid0316vsGJsSBQjGfizMXZs1musvXrpkxhxL4mgxNKCmSMsE6kw18o68FbSk4G6JNmNul&show_text=true&width=500" width="100%" height="188" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fcharlotte.hybner%2Fposts%2Fpfbid02DAy4WdcxTdJQSqCPRZc8Cs2a7E3tx7YmEfNFCThnpCTSU8gUPbxm1atNNo1ivdS1l&show_text=true&width=500" width="100%" height="188" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="carousel-slide w-full max-w-[500px] mx-auto flex justify-center">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmargaret.james.769488%2Fposts%2Fpfbid04QpBE5Nt2dESXdRQ68qk4bFQ9dZ227fF3r5LCEUUbUHmHYELPMorBQFaHJuBFt48l&show_text=true&width=500" width="100%" height="207" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
             </div>
           </div>
-
-          <!-- REVIEW 2: Ellen Ross Higgins -->
-          <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-emerald-950 text-emerald-400 font-black flex items-center justify-center border border-emerald-800 text-sm flex-shrink-0">EH</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Ellen Ross Higgins</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about 3 months ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "Great job and cleaned up well. Found them a few years ago and decided to make contact once again"
-              </p>
-            </div>
-          </div>
-
-          <!-- REVIEW 3: Quentin James Brown -->
-          <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-purple-950 text-purple-400 font-black flex items-center justify-center border border-purple-800 text-sm flex-shrink-0">QB</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Quentin James Brown</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about 4 months ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "Could not be more satisfied with my beautiful Payless bathroom makeover. I enjoyed working with their people, from the professional sales person, to the project coordinator, the measurement guy, the design specialist, and finally the very professional and skilled installer. I especially appreciated that it was fast. My project took only one day plus a bit of the next morning."
-              </p>
-            </div>
-          </div>
-
-          <!-- REVIEW 4: Christine Romero -->
-          <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-indigo-950 text-indigo-400 font-black flex items-center justify-center border border-indigo-800 text-sm flex-shrink-0">CR</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Christine Romero</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about 4 months ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "This is our 2nd bathroom we have done with The company. They did an excellent job from our project manager Carlos to our contractor Daniel and his team. Always on time very polite and finished our full bathroom renovation. They made sure all areas were cleaned each day when they left. So if you need a bathroom remodel check them out."
-              </p>
-            </div>
-          </div>
-
-          <!-- REVIEW 5: Harold Anderson -->
-          <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-sky-950 text-sky-400 font-black flex items-center justify-center border border-sky-800 text-sm flex-shrink-0">HA</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Harold Anderson</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about 5 months ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "Payless did a wonderful job on our bathroom remodel! So happy with it! From finding them at the VictorvilleCa home show till the total completion they have been awesome! Great price, great product and wonderful staff. Chery did a great job working with us on our time schedule and very friendly. Victor and Victor Jr did a wonderful job updating our Bath. They were very professional, did a great job and cleaned up afterwards! Looking forward to having them do another bathroom for us. Thank you Payless!"
-              </p>
-            </div>
-          </div>
-
-          <!-- REVIEW 6: Daphne Quezada -->
-          <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-rose-950 text-rose-400 font-black flex items-center justify-center border border-rose-800 text-sm flex-shrink-0">DQ</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Daphne Quezada</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about 6 months ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "We have been living in La Puente for over 60 years. we needed a bath remodel and decided to go with Payless. Thank you Aldi and all of our installers for amazing work. Now my family enjoys the walk in shower and the spa shower system."
-              </p>
-            </div>
-          </div>
-
-          <!-- REVIEW 7: Diane Moon -->
-          <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-amber-950 text-amber-400 font-black flex items-center justify-center border border-amber-800 text-sm flex-shrink-0">DM</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Diane Moon</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about 6 months ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "Living in Arcadia for over 30 years. We needed a jetted tub and an entire bath remodel and we decided to go with Payless. Our sales rep Romeo was very knowledgeable and professional. We didn’t even need to ask another company to come in . We decided to go with Payless. Thank you Carlos for our project coordination. Now with my health issues my life is so much easier with my walk in jetted tub."
-              </p>
-            </div>
-          </div>
-
-          <!-- REVIEW 8: Ralph Seaman Sr. -->
-          <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-teal-950 text-teal-400 font-black flex items-center justify-center border border-teal-800 text-sm flex-shrink-0">RS</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Ralph Seaman Sr.</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about 6 months ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "I have been living in Simi Valley for over 56 years. I needed a walk in shower for my safety and I found Payless. I glad I did as the entire team was professional and helpful. Thank you Chery for all your help. Now I enjoy my showers and relax with my spa shower system. Definitely recommend ."
-              </p>
-            </div>
-          </div>
-
-          <!-- REVIEW 9: Joseph Daniel Lockhart -->
-          <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-blue-950 text-blue-400 font-black flex items-center justify-center border border-blue-800 text-sm flex-shrink-0">JL</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Joseph Daniel Lockhart</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about 6 months ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "Living in Carson for over 8 years. We found Payless and decided to move forward with them. Our bath remodel turned out amazing. Thank you Ahmed and Alejandro for everything. We now enjoy our spa water shower and our walk in tub. We are very satisfied and definitely recommend."
-              </p>
-            </div>
-          </div>
-
-          <!-- REVIEW 10: Terri Gruenthal -->
-          <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-cyan-950 text-cyan-400 font-black flex items-center justify-center border border-cyan-800 text-sm flex-shrink-0">TG</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Terri Gruenthal</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about 9 months ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "We live in Santa Clarita for over 30 years and needed a bathroom and kitchen and flooring remodel. We decided to go with Payless and we are glad we did. They delivered everything as promised. We now enjoy family cooking time and our spa showers . Thank you Salvador, Bassel and Eduardo. Amazing team work."
-              </p>
-            </div>
-          </div>
-
-          <!-- REVIEW 11: Barton Wong -->
-          <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-violet-950 text-violet-400 font-black flex items-center justify-center border border-violet-800 text-sm flex-shrink-0">BW</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Barton Wong</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about 10 months ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "Living for 3 years and decided to get my kitchen renovated and Payless kitchen and Jesse convinced us to remodel with them and it was well worth it"
-              </p>
-            </div>
-          </div>
-
-          <!-- REVIEW 12: Charlotte Hybner -->
-          <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-emerald-950 text-emerald-400 font-black flex items-center justify-center border border-emerald-800 text-sm flex-shrink-0">CH</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Charlotte Hybner</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about 10 months ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "Lived city of redlands for 17 years decided to get my flooring renovated after my mother passed away and Payless kitchens helped with my renovation thank you Amira and Bassel"
-              </p>
-            </div>
-          </div>
-
-          <!-- REVIEW 13: Margaret James -->
-          <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
-              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-sky-950 text-sky-400 font-black flex items-center justify-center border border-sky-800 text-sm flex-shrink-0">MJ</div>
-                  <div>
-                    <h4 class="font-bold text-white text-base leading-tight">Margaret James</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  <span>about 10 months ago</span>
-                </div>
-              </div>
-              <p class="text-sm text-slate-300 leading-relaxed italic">
-                "Ive lived in wildomar since 2003 and my kitchen renovation is lile night and day diffrence im actually excited to cook now the reason i went with was purly becuase of the sales person brian and laiza arellie have been so helpful"
-              </p>
-            </div>
-          </div>
-
         </div>
-        <div class="carousel-dots flex flex-wrap items-center justify-center gap-1.5 px-4 pt-6"></div>
+        <div class="carousel-dots flex flex-wrap items-center justify-center gap-1.5 px-4 pb-4"></div>
       </div>
     </section>
         
