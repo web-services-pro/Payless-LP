@@ -48,56 +48,59 @@
 </head>
 <body class="bg-zinc-950 min-h-screen text-slate-100 font-sans antialiased flex flex-col justify-between selection:bg-sky-500 selection:text-white">
 
-  <header class="w-full bg-zinc-900 border-b border-zinc-800 py-4 px-6 sticky top-0 z-40 shadow-xl">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-      <div class="bg-white/95 px-5 py-2 rounded-xl shadow-lg flex items-center justify-center backdrop-blur-sm transition-transform hover:scale-[1.02]">
-        <img src="PAYLESS-LOGO.png" alt="Payless Kitchens & Baths" class="h-12 w-auto object-contain" width="180" height="48">
+  <header class="w-full bg-zinc-900 border-b border-zinc-800 py-2.5 sm:py-4 px-4 sm:px-6 sticky top-0 z-40 shadow-xl">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+      <div class="bg-white/95 px-4 py-1.5 sm:px-5 sm:py-2 rounded-xl shadow-lg flex items-center justify-center backdrop-blur-sm transition-transform hover:scale-[1.02]">
+        <img src="PAYLESS-LOGO.png" alt="Payless Kitchens &amp; Baths" class="h-9 sm:h-12 w-auto object-contain" width="180" height="48">
       </div>
-      <div class="flex flex-wrap justify-center items-center gap-2 text-xs font-black tracking-widest uppercase text-slate-300">
-        <span class="text-sky-300 bg-sky-950/60 border border-sky-900 px-3 py-1.5 rounded-md">🏠 Family-Owned Since 1985</span>
-        <span class="text-emerald-400 bg-emerald-950/60 border border-emerald-900 px-3 py-1.5 rounded-md">⭐ BBB A+ Rated</span>
-        <span class="text-sky-400 bg-sky-950/60 border border-sky-900 px-3 py-1.5 rounded-md">🛡️ Fully Licensed & Insured</span>
+      <div class="flex items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] font-semibold text-slate-300">
+        <span>🏡 Family-Owned 40 Yrs</span>
+        <span>•</span>
+        <span>⭐ BBB A+</span>
+        <span>•</span>
+        <span>🛡️ Licensed &amp; Insured</span>
       </div>
     </div>
   </header>
 
-  <section class="w-full bg-gradient-to-b from-zinc-900 via-zinc-950 to-zinc-950 py-12 px-4 border-b border-zinc-900">
-    <div class="max-w-4xl mx-auto text-center space-y-6">
-      <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight">
-        Kitchen & Bathroom Remodeling Built to Last — and Actually Enjoy
+  <section class="w-full bg-gradient-to-b from-zinc-900 via-zinc-950 to-zinc-950 py-4 sm:py-12 px-4 border-b border-zinc-900">
+    <!-- Reduced vertical spacing on mobile (space-y-3) -->
+    <div class="max-w-4xl mx-auto text-center space-y-3 sm:space-y-6">
+      
+      <!-- Headline: Controlled text size for mobile screens -->
+      <h1 class="font-display text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight">
+        Kitchen &amp; Bathroom Remodeling Built to Last — and Actually Enjoy
       </h1>
-      <p class="text-slate-300 text-base max-w-2xl mx-auto leading-relaxed">
-        Forty years of craftsmanship. BBB A+ rated. Transparent, fixed pricing and premium materials for homeowners who want it done right, not just done fast. See if your home qualifies for a free design consultation below.
+      
+      <!-- Compact Subtext -->
+      <p class="text-slate-300 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed">
+        Answer 5 Quick Questions — See if Your Home Qualifies for a Free Design Consultation &amp; Quote Below.
       </p>
 
-      <div class="max-w-2xl mx-auto mb-6 bg-gradient-to-r from-sky-950/80 via-zinc-900 to-sky-950/80 border-2 border-sky-500/40 rounded-2xl p-4 sm:p-5 text-center shadow-2xl backdrop-blur-md">
-        <div class="flex items-center justify-center gap-2 mb-2">
-          <span class="bg-sky-500 text-zinc-950 font-black text-[10px] uppercase px-2.5 py-0.5 rounded-full tracking-wider">Online Limited-Time Financing Special</span>
+      <!-- Combined Row for Financing & Star Ratings on Mobile -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 pt-1">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-1.5 text-center">
+          <p class="text-sky-400 font-bold text-xs uppercase tracking-wide">$0 Down &amp; 0% Interest for 12 Months</p>
         </div>
-        <h3 class="text-lg sm:text-2xl font-black text-white tracking-tight leading-snug">
-          <span class="text-sky-400">$0 Down Payment</span> &amp; <span class="text-emerald-400">0% Interest</span> for 12 Months
-        </h3>
-        <p class="text-xs sm:text-sm text-slate-300 mt-1.5 font-medium">
-          Long-term financing options available starting as low as <span class="text-sky-300 font-bold">9.99%</span>
-        </p>
+        
+        <div class="flex items-center justify-center gap-1.5 text-xs text-slate-300 font-bold">
+          <span class="text-amber-400">★★★★★</span>
+          <span>4.8 / 5.0 (310+ Reviews)</span>
+        </div>
       </div>
       
-      <div class="flex items-center justify-center gap-2 mb-3">
-        <span class="text-amber-400 text-lg">★★★★★</span>
-        <span class="text-base max-w-2xl font-bold text-slate-300 uppercase tracking-wider">4.8 / 5.0 - 310+ Verified Reviews on Google & Facebook</span>
-      </div>
-      
-      <div id="quizCard" class="w-full max-w-2xl mx-auto bg-zinc-900 border-2 border-zinc-800/80 rounded-2xl shadow-2xl p-8 sm:p-10 text-left mt-10 relative scroll-mt-24">
+      <!-- Quiz Card with tight top margin on mobile (mt-3) -->
+      <div id="quizCard" class="w-full max-w-2xl mx-auto bg-zinc-900 border-2 border-zinc-800/80 rounded-2xl shadow-2xl p-5 sm:p-10 text-left mt-3 sm:mt-10 relative scroll-mt-24">
 
-        <div class="w-full bg-zinc-800 h-2 rounded-full mb-8 overflow-hidden">
+        <div class="w-full bg-zinc-800 h-2 rounded-full mb-5 sm:mb-8 overflow-hidden">
           <div id="progressBar" class="bg-gradient-to-r from-sky-500 to-blue-600 h-full w-[12%] transition-all duration-300"></div>
         </div>
 
-        <div id="surveyHeader" class="mb-6 border-b border-zinc-800/60 pb-4">
-          <h2 id="dynamicMainTitle" class="font-display text-xl font-bold text-white tracking-tight">See If Your Home Qualifies</h2>
+        <div id="surveyHeader" class="mb-4 sm:mb-6 border-b border-zinc-800/60 pb-3 sm:pb-4">
+          <h2 id="dynamicMainTitle" class="font-display text-lg sm:text-xl font-bold text-white tracking-tight">See If Your Home Qualifies</h2>
           <p id="dynamicSubTitle" class="text-xs text-slate-400 mt-1">Takes under 30 seconds — No Obligation.</p>
         </div>
-
+        
         <!-- STEP 1: Zip Code Check -->
         <div id="step1" class="step active">
 
