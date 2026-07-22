@@ -273,35 +273,35 @@
         </p>
       </div>
 
-      <div id="fbCarousel" class="relative rounded-2xl border border-zinc-800 bg-zinc-900/60 shadow-2xl overflow-hidden py-4 px-2 sm:px-12">
+      <div id="fbCarousel" class="relative rounded-2xl border border-zinc-800 bg-zinc-900/60 shadow-2xl overflow-hidden py-8 px-4 sm:px-16">
         
-        <!-- LEFT NAVIGATION BUTTON -->
-        <button onclick="moveCarousel('fbCarousel', -1)" aria-label="Previous review" class="absolute top-1/2 -translate-y-1/2 left-3 sm:left-5 z-20 bg-zinc-800/90 hover:bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition border border-zinc-700 shadow-lg hover:scale-105 focus:outline-none">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        <!-- LEFT ARROW BUTTON -->
+        <button onclick="moveCarousel('fbCarousel', -1)" aria-label="Previous review" class="absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 z-20 bg-zinc-800 hover:bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition border border-zinc-700 shadow-xl cursor-pointer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
         </button>
 
-        <!-- RIGHT NAVIGATION BUTTON -->
-        <button onclick="moveCarousel('fbCarousel', 1)" aria-label="Next review" class="absolute top-1/2 -translate-y-1/2 right-3 sm:right-5 z-20 bg-zinc-800/90 hover:bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition border border-zinc-700 shadow-lg hover:scale-105 focus:outline-none">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <!-- RIGHT ARROW BUTTON -->
+        <button onclick="moveCarousel('fbCarousel', 1)" aria-label="Next review" class="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 z-20 bg-zinc-800 hover:bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition border border-zinc-700 shadow-xl cursor-pointer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
         
-        <div class="flex items-center justify-center py-4 px-2 sm:px-6">
+        <div class="flex items-center justify-center">
           
           <!-- REVIEW 1: Gurinderjit Kaur -->
           <div class="carousel-slide active w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-sky-950 text-sky-400 font-black flex items-center justify-center border border-sky-800 text-sm flex-shrink-0 shadow-inner">GK</div>
+                  <div class="w-11 h-11 rounded-full bg-sky-950 text-sky-400 font-black flex items-center justify-center border border-sky-800 text-sm flex-shrink-0">GK</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Gurinderjit Kaur</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about a month ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about a month ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "The team at Payless did a good job with my new bathroom. They were professional and did not make a mess. Thank you for the great work."
@@ -311,19 +311,19 @@
 
           <!-- REVIEW 2: Ellen Ross Higgins -->
           <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-emerald-950 text-emerald-400 font-black flex items-center justify-center border border-emerald-800 text-sm flex-shrink-0 shadow-inner">EH</div>
+                  <div class="w-11 h-11 rounded-full bg-emerald-950 text-emerald-400 font-black flex items-center justify-center border border-emerald-800 text-sm flex-shrink-0">EH</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Ellen Ross Higgins</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about 3 months ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about 3 months ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "Great job and cleaned up well. Found them a few years ago and decided to make contact once again"
@@ -333,19 +333,19 @@
 
           <!-- REVIEW 3: Quentin James Brown -->
           <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-purple-950 text-purple-400 font-black flex items-center justify-center border border-purple-800 text-sm flex-shrink-0 shadow-inner">QB</div>
+                  <div class="w-11 h-11 rounded-full bg-purple-950 text-purple-400 font-black flex items-center justify-center border border-purple-800 text-sm flex-shrink-0">QB</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Quentin James Brown</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about 4 months ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about 4 months ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "Could not be more satisfied with my beautiful Payless bathroom makeover. I enjoyed working with their people, from the professional sales person, to the project coordinator, the measurement guy, the design specialist, and finally the very professional and skilled installer. I especially appreciated that it was fast. My project took only one day plus a bit of the next morning."
@@ -355,19 +355,19 @@
 
           <!-- REVIEW 4: Christine Romero -->
           <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-indigo-950 text-indigo-400 font-black flex items-center justify-center border border-indigo-800 text-sm flex-shrink-0 shadow-inner">CR</div>
+                  <div class="w-11 h-11 rounded-full bg-indigo-950 text-indigo-400 font-black flex items-center justify-center border border-indigo-800 text-sm flex-shrink-0">CR</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Christine Romero</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about 4 months ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about 4 months ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "This is our 2nd bathroom we have done with The company. They did an excellent job from our project manager Carlos to our contractor Daniel and his team. Always on time very polite and finished our full bathroom renovation. They made sure all areas were cleaned each day when they left. So if you need a bathroom remodel check them out."
@@ -377,19 +377,19 @@
 
           <!-- REVIEW 5: Harold Anderson -->
           <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-sky-950 text-sky-400 font-black flex items-center justify-center border border-sky-800 text-sm flex-shrink-0 shadow-inner">HA</div>
+                  <div class="w-11 h-11 rounded-full bg-sky-950 text-sky-400 font-black flex items-center justify-center border border-sky-800 text-sm flex-shrink-0">HA</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Harold Anderson</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about 5 months ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about 5 months ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "Payless did a wonderful job on our bathroom remodel! So happy with it! From finding them at the VictorvilleCa home show till the total completion they have been awesome! Great price, great product and wonderful staff. Chery did a great job working with us on our time schedule and very friendly. Victor and Victor Jr did a wonderful job updating our Bath. They were very professional, did a great job and cleaned up afterwards! Looking forward to having them do another bathroom for us. Thank you Payless!"
@@ -399,19 +399,19 @@
 
           <!-- REVIEW 6: Daphne Quezada -->
           <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-rose-950 text-rose-400 font-black flex items-center justify-center border border-rose-800 text-sm flex-shrink-0 shadow-inner">DQ</div>
+                  <div class="w-11 h-11 rounded-full bg-rose-950 text-rose-400 font-black flex items-center justify-center border border-rose-800 text-sm flex-shrink-0">DQ</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Daphne Quezada</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about 6 months ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about 6 months ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "We have been living in La Puente for over 60 years. we needed a bath remodel and decided to go with Payless. Thank you Aldi and all of our installers for amazing work. Now my family enjoys the walk in shower and the spa shower system."
@@ -421,19 +421,19 @@
 
           <!-- REVIEW 7: Diane Moon -->
           <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-amber-950 text-amber-400 font-black flex items-center justify-center border border-amber-800 text-sm flex-shrink-0 shadow-inner">DM</div>
+                  <div class="w-11 h-11 rounded-full bg-amber-950 text-amber-400 font-black flex items-center justify-center border border-amber-800 text-sm flex-shrink-0">DM</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Diane Moon</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about 6 months ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about 6 months ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "Living in Arcadia for over 30 years. We needed a jetted tub and an entire bath remodel and we decided to go with Payless. Our sales rep Romeo was very knowledgeable and professional. We didn’t even need to ask another company to come in . We decided to go with Payless. Thank you Carlos for our project coordination. Now with my health issues my life is so much easier with my walk in jetted tub."
@@ -443,19 +443,19 @@
 
           <!-- REVIEW 8: Ralph Seaman Sr. -->
           <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-teal-950 text-teal-400 font-black flex items-center justify-center border border-teal-800 text-sm flex-shrink-0 shadow-inner">RS</div>
+                  <div class="w-11 h-11 rounded-full bg-teal-950 text-teal-400 font-black flex items-center justify-center border border-teal-800 text-sm flex-shrink-0">RS</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Ralph Seaman Sr.</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about 6 months ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about 6 months ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "I have been living in Simi Valley for over 56 years. I needed a walk in shower for my safety and I found Payless. I glad I did as the entire team was professional and helpful. Thank you Chery for all your help. Now I enjoy my showers and relax with my spa shower system. Definitely recommend ."
@@ -465,19 +465,19 @@
 
           <!-- REVIEW 9: Joseph Daniel Lockhart -->
           <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-blue-950 text-blue-400 font-black flex items-center justify-center border border-blue-800 text-sm flex-shrink-0 shadow-inner">JL</div>
+                  <div class="w-11 h-11 rounded-full bg-blue-950 text-blue-400 font-black flex items-center justify-center border border-blue-800 text-sm flex-shrink-0">JL</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Joseph Daniel Lockhart</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about 6 months ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about 6 months ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "Living in Carson for over 8 years. We found Payless and decided to move forward with them. Our bath remodel turned out amazing. Thank you Ahmed and Alejandro for everything. We now enjoy our spa water shower and our walk in tub. We are very satisfied and definitely recommend."
@@ -487,19 +487,19 @@
 
           <!-- REVIEW 10: Terri Gruenthal -->
           <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-cyan-950 text-cyan-400 font-black flex items-center justify-center border border-cyan-800 text-sm flex-shrink-0 shadow-inner">TG</div>
+                  <div class="w-11 h-11 rounded-full bg-cyan-950 text-cyan-400 font-black flex items-center justify-center border border-cyan-800 text-sm flex-shrink-0">TG</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Terri Gruenthal</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about 9 months ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about 9 months ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "We live in Santa Clarita for over 30 years and needed a bathroom and kitchen and flooring remodel. We decided to go with Payless and we are glad we did. They delivered everything as promised. We now enjoy family cooking time and our spa showers . Thank you Salvador, Bassel and Eduardo. Amazing team work."
@@ -509,19 +509,19 @@
 
           <!-- REVIEW 11: Barton Wong -->
           <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-violet-950 text-violet-400 font-black flex items-center justify-center border border-violet-800 text-sm flex-shrink-0 shadow-inner">BW</div>
+                  <div class="w-11 h-11 rounded-full bg-violet-950 text-violet-400 font-black flex items-center justify-center border border-violet-800 text-sm flex-shrink-0">BW</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Barton Wong</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about 10 months ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about 10 months ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "Living for 3 years and decided to get my kitchen renovated and Payless kitchen and Jesse convinced us to remodel with them and it was well worth it"
@@ -531,19 +531,19 @@
 
           <!-- REVIEW 12: Charlotte Hybner -->
           <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-emerald-950 text-emerald-400 font-black flex items-center justify-center border border-emerald-800 text-sm flex-shrink-0 shadow-inner">CH</div>
+                  <div class="w-11 h-11 rounded-full bg-emerald-950 text-emerald-400 font-black flex items-center justify-center border border-emerald-800 text-sm flex-shrink-0">CH</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Charlotte Hybner</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about 10 months ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about 10 months ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "Lived city of redlands for 17 years decided to get my flooring renovated after my mother passed away and Payless kitchens helped with my renovation thank you Amira and Bassel"
@@ -553,19 +553,19 @@
 
           <!-- REVIEW 13: Margaret James -->
           <div class="carousel-slide w-full max-w-[550px] mx-auto">
-            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-7 text-left space-y-4 shadow-2xl">
+              <div class="flex items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
                 <div class="flex items-center space-x-3">
-                  <div class="w-11 h-11 rounded-full bg-sky-950 text-sky-400 font-black flex items-center justify-center border border-sky-800 text-sm flex-shrink-0 shadow-inner">MJ</div>
+                  <div class="w-11 h-11 rounded-full bg-sky-950 text-sky-400 font-black flex items-center justify-center border border-sky-800 text-sm flex-shrink-0">MJ</div>
                   <div>
                     <h4 class="font-bold text-white text-base leading-tight">Margaret James</h4>
-                    <div class="text-amber-400 text-xs mt-0.5 tracking-widest">★★★★★</div>
+                    <div class="text-amber-400 text-xs mt-0.5 tracking-wider">★★★★★</div>
                   </div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-medium bg-zinc-900 border border-zinc-800/80 px-3 py-1 rounded-full self-start sm:self-auto">
-                  <svg class="w-3.5 h-3.5 text-blue-500 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                  about 10 months ago
-                </span>
+                <div class="flex items-center gap-1.5 bg-blue-950/40 border border-blue-800/50 text-blue-400 px-3 py-1 rounded-full text-[11px] font-semibold flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>about 10 months ago</span>
+                </div>
               </div>
               <p class="text-sm text-slate-300 leading-relaxed italic">
                 "Ive lived in wildomar since 2003 and my kitchen renovation is lile night and day diffrence im actually excited to cook now the reason i went with was purly becuase of the sales person brian and laiza arellie have been so helpful"
@@ -574,7 +574,7 @@
           </div>
 
         </div>
-        <div class="carousel-dots flex flex-wrap items-center justify-center gap-1.5 px-4 pb-2"></div>
+        <div class="carousel-dots flex flex-wrap items-center justify-center gap-1.5 px-4 pt-6"></div>
       </div>
     </section>
         
