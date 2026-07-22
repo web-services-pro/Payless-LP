@@ -68,6 +68,18 @@
         Forty years of craftsmanship. BBB A+ rated. Transparent, fixed pricing and premium materials for homeowners who want it done right, not just done fast. See if your home qualifies for a free design consultation below.
       </p>
 
+      <div class="max-w-2xl mx-auto mb-6 bg-gradient-to-r from-sky-950/80 via-zinc-900 to-sky-950/80 border-2 border-sky-500/40 rounded-2xl p-4 sm:p-5 text-center shadow-2xl backdrop-blur-md">
+        <div class="flex items-center justify-center gap-2 mb-2">
+          <span class="bg-sky-500 text-zinc-950 font-black text-[10px] uppercase px-2.5 py-0.5 rounded-full tracking-wider">Online Limited-Time Financing Special</span>
+        </div>
+        <h3 class="text-lg sm:text-2xl font-black text-white tracking-tight leading-snug">
+          <span class="text-sky-400">$0 Down Payment</span> &amp; <span class="text-emerald-400">0% Interest</span> for 12 Months
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-300 mt-1.5 font-medium">
+          Long-term financing options available starting as low as <span class="text-sky-300 font-bold">9.99%</span>
+        </p>
+      </div>
+      
       <div class="flex items-center justify-center gap-2 mb-3">
         <span class="text-amber-400 text-lg">★★★★★</span>
         <span class="text-base max-w-2xl font-bold text-slate-300 uppercase tracking-wider">4.8 / 5.0 - 310+ Verified Reviews on Google & Facebook</span>
@@ -86,6 +98,16 @@
 
         <!-- STEP 1: Zip Code Check -->
         <div id="step1" class="step active">
+          <div class="flex justify-center mb-4">
+            <div class="inline-flex items-center gap-2 bg-emerald-950/70 border border-emerald-800/80 px-3.5 py-1.5 rounded-full text-emerald-400 text-xs font-semibold shadow-inner">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span>Now Booking Free Design Consultations in SoCal for July & August</span>
+            </div>
+          </div>
+          
           <label class="block text-base font-bold text-slate-200 mb-2">See if Your Property is in Our Approved Service Area - What's your ZIP code?</label>
           <input type="text" id="zip" placeholder="e.g. 91201" class="w-full bg-zinc-950 p-4 border-2 border-zinc-800 rounded-xl text-center text-3xl font-black tracking-widest text-sky-400 focus:outline-none focus:border-sky-500 mb-6 transition" maxlength="5">
           <button onclick="validateZipRadius()" class="w-full bg-sky-700 hover:bg-sky-600 text-white font-extrabold p-4 rounded-xl transition shadow-lg tracking-wider uppercase text-sm">Check My Area</button>
@@ -232,6 +254,21 @@
           <div class="text-5xl mb-4">🎉</div>
           <h2 class="font-display text-xl font-bold text-emerald-400 mb-2">Your Consultation is Confirmed!</h2>
           <p class="text-slate-300 text-xs max-w-sm mx-auto leading-relaxed">We've got everything we need. A member of our design team will call you within 24 hours to confirm the details and answer any questions before your visit. We're looking forward to meeting with you!</p>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 🛡️ INSERT MICRO-TRUST BAR HERE -->
+        <!-- ========================================== -->
+        <div id="quizTrustBar" class="mt-8 pt-4 border-t border-zinc-800/80 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-[11px] sm:text-xs text-slate-400 font-medium text-center">
+          <span class="inline-flex items-center gap-1.5">
+            <span class="text-sky-400">🔒</span> 100% Free &amp; Secure
+          </span>
+          <span class="inline-flex items-center gap-1.5">
+            <span class="text-emerald-400">🚫</span> No Spam Guarantee
+          </span>
+          <span class="inline-flex items-center gap-1.5">
+            <span class="text-amber-400">📋</span> CA Lic #913187
+          </span>
         </div>
         
       </div>
@@ -1097,6 +1134,7 @@
             }
 
             document.getElementById('step8').classList.remove('active');
+            document.getElementById('quizTrustBar').classList.add('hidden');
             document.getElementById('surveyHeader').classList.add('hidden');
             document.getElementById('progressBar').parentNode.classList.add('hidden');
             document.getElementById('success').classList.add('active');
