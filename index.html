@@ -209,10 +209,16 @@
             </div>
             <input type="tel" id="phone" placeholder="Mobile Phone (e.g. 516-759-3334)" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
             <input type="email" id="email" placeholder="Email Address" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
-            <input type="text" id="address" placeholder="Street Address (For local area mapping)" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
+            <input type="text" id="address" placeholder="Street Address" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
             <input type="text" id="city" placeholder="City" class="w-full bg-zinc-950 p-3.5 border-2 border-zinc-800 rounded-xl text-white focus:outline-none focus:border-sky-500 font-medium text-sm">
 
-            <button onclick="saveLeadAndAdvanceToCalendar()" id="leadBtn" class="w-full bg-sky-700 hover:bg-sky-600 text-white font-bold p-4 rounded-xl transition shadow-lg uppercase text-xs tracking-wider mt-2">Continue to Preferred Date & Time &rarr;</button>
+            <button onclick="saveLeadAndAdvanceToCalendar()" 
+                    id="leadBtn" 
+                    style="width: 100%; background-color: #0284c7; color: #ffffff; font-weight: 800; padding: 16px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.05em; font-size: 14px; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4); transition: background-color 0.2s ease; margin-top: 8px;"
+                    onmouseover="this.style.backgroundColor='#0369a1';" 
+                    onmouseout="this.style.backgroundColor='#0284c7;'">
+              Continue to Preferred Date &amp; Time &rarr;
+            </button>
           </div>
         </div>
 
@@ -237,7 +243,13 @@
               By clicking below, you provide express written consent for Payless Kitchens & Baths to contact you by phone call or automated SMS text message about your project. Message and data rates may apply. Reply STOP to opt out.
             </p>
 
-            <button onclick="triggerSmsOtpPipeline()" id="smsBtn" class="w-full bg-sky-700 hover:bg-sky-600 text-white font-bold p-4 rounded-xl transition shadow-lg uppercase text-xs tracking-wider">Proceed To Confirm Your Appointment Slot</button>
+            <button onclick="triggerSmsOtpPipeline()" 
+                    id="smsBtn" 
+                    style="width: 100%; background-color: #0284c7; color: #ffffff; font-weight: 800; padding: 16px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.05em; font-size: 14px; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4); transition: background-color 0.2s ease;"
+                    onmouseover="this.style.backgroundColor='#0369a1';" 
+                    onmouseout="this.style.backgroundColor='#0284c7;'">
+              Proceed To Confirm Your Appointment Slot &rarr;
+            </button>
           </div>
         </div>
 
