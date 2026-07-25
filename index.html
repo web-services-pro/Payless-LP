@@ -318,67 +318,6 @@
   <div id="recaptcha-container"></div>
 
   <main class="max-w-4xl mx-auto px-4 py-14 w-full space-y-16">
-    <section class="space-y-8">
-      <div class="text-center space-y-2">
-        <span class="bg-white border border-[#E8DCC0] text-sky-700 text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">Our Process</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900">Simple, Transparent, No Surprises</h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-        <div class="bg-white border border-[#E8DCC0] rounded-2xl p-6 text-center space-y-3 shadow-sm">
-          <div class="text-3xl">🗓️</div>
-          <h3 class="font-black text-zinc-900 text-sm uppercase tracking-wide">1. Free Design Consultation</h3>
-          <p class="text-xs text-zinc-600 leading-relaxed">We visit your home, walk through your vision, and put together a design concept — no cost, no obligation.</p>
-        </div>
-        <div class="bg-white border border-[#E8DCC0] rounded-2xl p-6 text-center space-y-3 shadow-sm">
-          <div class="text-3xl">📋</div>
-          <h3 class="font-black text-zinc-900 text-sm uppercase tracking-wide">2. Fixed-Price Proposal</h3>
-          <p class="text-xs text-zinc-600 leading-relaxed">You'll get a clear, itemized proposal before any work begins. No vague estimates, no surprise change orders.</p>
-        </div>
-        <div class="bg-white border border-[#E8DCC0] rounded-2xl p-6 text-center space-y-3 shadow-sm">
-          <div class="text-3xl">🔨</div>
-          <h3 class="font-black text-zinc-900 text-sm uppercase tracking-wide">3. Expert Installation</h3>
-          <p class="text-xs text-zinc-600 leading-relaxed">Your dedicated project team handles everything from demo to final walkthrough, on the timeline we commit to in writing.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 🎬 LITE YOUTUBE FACADE (FASTEST LOAD) -->
-    <section class="max-w-3xl mx-auto my-12 px-4 text-center">
-      <div class="mb-6 space-y-2">
-        <span class="text-sky-700 font-bold text-xs uppercase tracking-widest">Behind The Scenes</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900">Meet Payless &amp; See Our Process</h2>
-        <p class="text-zinc-600 text-xs sm:text-sm max-w-lg mx-auto">
-          Watch how our team delivers premium craftsmanship, transparent pricing, and clean installations in just a few days.
-        </p>
-      </div>
-
-      <!-- Facade Container -->
-      <div id="videoContainer" class="relative w-full rounded-2xl overflow-hidden border-2 border-zinc-800/80 shadow-2xl bg-zinc-950 cursor-pointer group" style="padding-top: 56.25%;" onclick="loadYouTubeIframe()">
-        <!-- High-res YouTube Cover Image -->
-        <img id="videoPoster" 
-             src="https://img.youtube.com/vi/SPNBU9r_mnQ/hqdefault.jpg"
-             alt="Meet Payless Video Preview" 
-             loading="lazy" 
-             class="absolute top-0 left-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
-        
-        <!-- Custom Animated Play Button -->
-        <div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition">
-          <div class="w-16 h-16 sm:w-20 sm:h-20 bg-sky-600 group-hover:bg-sky-500 text-white rounded-full flex items-center justify-center shadow-2xl transition transform group-hover:scale-110">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 fill-current translate-x-0.5" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tiny script to insert iframe ONLY on click -->
-    <script>
-      function loadYouTubeIframe() {
-        const container = document.getElementById('videoContainer');
-        container.innerHTML = `<iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/SPNBU9r_mnQ?autoplay=1&rel=0&modestbranding=1" title="Meet Payless" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-      }
-    </script>
     
     <section class="space-y-4">
       <div class="text-center">
@@ -843,67 +782,6 @@
       </div>
     </section>
 
-    <section class="space-y-8 border-t border-[#E8DCC0] pt-14 bg-[#FDF0D5]">
-      <div class="text-center space-y-2">
-        <span class="bg-white border border-[#E8DCC0] text-amber-700 text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">Why Homeowners Choose Us</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900 max-w-xl mx-auto">Built for Homeowners Who Won't Settle</h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-        <div class="flex items-start gap-3 bg-white border border-[#E8DCC0] rounded-xl p-4 shadow-sm">
-          <span class="text-emerald-600 text-lg leading-none">✔</span>
-          <span class="text-sm text-zinc-700 font-medium">Guaranteed timeline — in writing</span>
-        </div>
-        <div class="flex items-start gap-3 bg-white border border-[#E8DCC0] rounded-xl p-4 shadow-sm">
-          <span class="text-emerald-600 text-lg leading-none">✔</span>
-          <span class="text-sm text-zinc-700 font-medium">A dedicated project coordinator for your job, start to finish</span>
-        </div>
-        <div class="flex items-start gap-3 bg-white border border-[#E8DCC0] rounded-xl p-4 shadow-sm">
-          <span class="text-emerald-600 text-lg leading-none">✔</span>
-          <span class="text-sm text-zinc-700 font-medium">Transparent, itemized pricing before any work begins</span>
-        </div>
-        <div class="flex items-start gap-3 bg-white border border-[#E8DCC0] rounded-xl p-4 shadow-sm">
-          <span class="text-emerald-600 text-lg leading-none">✔</span>
-          <span class="text-sm text-zinc-700 font-medium">Premium materials and a workmanship guarantee</span>
-        </div>
-        <div class="flex items-start gap-3 bg-white border border-[#E8DCC0] rounded-xl p-4 shadow-sm">
-          <span class="text-emerald-600 text-lg leading-none">✔</span>
-          <span class="text-sm text-zinc-700 font-medium">Family-owned and operated since 1985</span>
-        </div>
-        <div class="flex items-start gap-3 bg-white border border-[#E8DCC0] rounded-xl p-4 shadow-sm">
-          <span class="text-emerald-600 text-lg leading-none">✔</span>
-          <span class="text-sm text-zinc-700 font-medium">BBB A+ Accredited</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch border-t border-[#E8DCC0] pt-14 bg-[#FDF0D5]">
-      <div class="bg-white border border-[#E8DCC0] rounded-2xl p-6 space-y-4 shadow-sm">
-        <h3 class="font-display text-lg font-bold text-zinc-900 border-b border-[#E8DCC0] pb-3">Our Story</h3>
-        <p class="text-sm text-zinc-600 leading-relaxed">
-          Our family has been in the home remodeling business since 1985, starting with Carpet Wagon. Over the years, we saw the same story play out again and again: homeowners frustrated by long timelines, poor communication, and contractors who disappeared halfway through the job.
-        </p>
-        <p class="text-sm text-zinc-600 leading-relaxed">
-          That's why we started Payless Kitchen & Bath — to do it differently. Fewer delays. Clearer communication. A process built around you, not around us. Four decades later, that's still the standard we hold ourselves to on every kitchen, bathroom, and flooring project we take on.
-        </p>
-      </div>
-
-      <div class="rounded-2xl border border-[#E8DCC0] overflow-hidden min-h-[260px] shadow-lg">
-        <img src="images/Payless-team.webp" alt="The Payless Kitchens & Baths team" loading="lazy" class="w-full h-full object-cover">
-      </div>
-    </section>
-
-    <section class="border-t border-[#E8DCC0] pt-14">
-      <div class="bg-white border border-[#E8DCC0] rounded-2xl p-6 space-y-4 shadow-sm">
-        <h3 class="font-display text-lg font-bold text-zinc-900 border-b border-[#E8DCC0] pb-3">Our Values</h3>
-        <p class="text-sm text-zinc-600 leading-relaxed">
-          Everything starts with putting the homeowner first — transparent, itemized pricing you can actually understand, a dedicated project coordinator who keeps you informed at every stage, and a firm commitment to the timeline we give you in writing.
-        </p>
-        <p class="text-sm text-zinc-600 leading-relaxed">
-          We use premium materials and back our work with a workmanship guarantee, because a remodel should still look and feel great years from now, not just on installation day. It's the standard behind every project we complete.
-        </p>
-      </div>
-    </section>
-
     <section class="space-y-8 border-t border-[#E8DCC0] pt-14">
       <div class="text-center space-y-2">
         <span class="bg-white border border-[#E8DCC0] text-sky-700 text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">Common Questions</span>
@@ -948,6 +826,129 @@
       </div>
     </section>
 
+    <section class="space-y-8 border-t border-[#E8DCC0] pt-14 bg-[#FDF0D5]">
+      <div class="text-center space-y-2">
+        <span class="bg-white border border-[#E8DCC0] text-amber-700 text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">Why Homeowners Choose Us</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900 max-w-xl mx-auto">Built for Homeowners Who Won't Settle</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+        <div class="flex items-start gap-3 bg-white border border-[#E8DCC0] rounded-xl p-4 shadow-sm">
+          <span class="text-emerald-600 text-lg leading-none">✔</span>
+          <span class="text-sm text-zinc-700 font-medium">Guaranteed timeline — in writing</span>
+        </div>
+        <div class="flex items-start gap-3 bg-white border border-[#E8DCC0] rounded-xl p-4 shadow-sm">
+          <span class="text-emerald-600 text-lg leading-none">✔</span>
+          <span class="text-sm text-zinc-700 font-medium">A dedicated project coordinator for your job, start to finish</span>
+        </div>
+        <div class="flex items-start gap-3 bg-white border border-[#E8DCC0] rounded-xl p-4 shadow-sm">
+          <span class="text-emerald-600 text-lg leading-none">✔</span>
+          <span class="text-sm text-zinc-700 font-medium">Transparent, itemized pricing before any work begins</span>
+        </div>
+        <div class="flex items-start gap-3 bg-white border border-[#E8DCC0] rounded-xl p-4 shadow-sm">
+          <span class="text-emerald-600 text-lg leading-none">✔</span>
+          <span class="text-sm text-zinc-700 font-medium">Premium materials and a workmanship guarantee</span>
+        </div>
+        <div class="flex items-start gap-3 bg-white border border-[#E8DCC0] rounded-xl p-4 shadow-sm">
+          <span class="text-emerald-600 text-lg leading-none">✔</span>
+          <span class="text-sm text-zinc-700 font-medium">Family-owned and operated since 1985</span>
+        </div>
+        <div class="flex items-start gap-3 bg-white border border-[#E8DCC0] rounded-xl p-4 shadow-sm">
+          <span class="text-emerald-600 text-lg leading-none">✔</span>
+          <span class="text-sm text-zinc-700 font-medium">BBB A+ Accredited</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-8">
+      <div class="text-center space-y-2">
+        <span class="bg-white border border-[#E8DCC0] text-sky-700 text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">Our Process</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900">Simple, Transparent, No Surprises</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div class="bg-white border border-[#E8DCC0] rounded-2xl p-6 text-center space-y-3 shadow-sm">
+          <div class="text-3xl">🗓️</div>
+          <h3 class="font-black text-zinc-900 text-sm uppercase tracking-wide">1. Free Design Consultation</h3>
+          <p class="text-xs text-zinc-600 leading-relaxed">We visit your home, walk through your vision, and put together a design concept — no cost, no obligation.</p>
+        </div>
+        <div class="bg-white border border-[#E8DCC0] rounded-2xl p-6 text-center space-y-3 shadow-sm">
+          <div class="text-3xl">📋</div>
+          <h3 class="font-black text-zinc-900 text-sm uppercase tracking-wide">2. Fixed-Price Proposal</h3>
+          <p class="text-xs text-zinc-600 leading-relaxed">You'll get a clear, itemized proposal before any work begins. No vague estimates, no surprise change orders.</p>
+        </div>
+        <div class="bg-white border border-[#E8DCC0] rounded-2xl p-6 text-center space-y-3 shadow-sm">
+          <div class="text-3xl">🔨</div>
+          <h3 class="font-black text-zinc-900 text-sm uppercase tracking-wide">3. Expert Installation</h3>
+          <p class="text-xs text-zinc-600 leading-relaxed">Your dedicated project team handles everything from demo to final walkthrough, on the timeline we commit to in writing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🎬 LITE YOUTUBE FACADE (FASTEST LOAD) -->
+    <section class="max-w-3xl mx-auto my-12 px-4 text-center">
+      <div class="mb-6 space-y-2">
+        <span class="text-sky-700 font-bold text-xs uppercase tracking-widest">Behind The Scenes</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900">Meet Payless &amp; See Our Process</h2>
+        <p class="text-zinc-600 text-xs sm:text-sm max-w-lg mx-auto">
+          Watch how our team delivers premium craftsmanship, transparent pricing, and clean installations in just a few days.
+        </p>
+      </div>
+
+      <!-- Facade Container -->
+      <div id="videoContainer" class="relative w-full rounded-2xl overflow-hidden border-2 border-zinc-800/80 shadow-2xl bg-zinc-950 cursor-pointer group" style="padding-top: 56.25%;" onclick="loadYouTubeIframe()">
+        <!-- High-res YouTube Cover Image -->
+        <img id="videoPoster" 
+             src="https://img.youtube.com/vi/SPNBU9r_mnQ/hqdefault.jpg"
+             alt="Meet Payless Video Preview" 
+             loading="lazy" 
+             class="absolute top-0 left-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
+        
+        <!-- Custom Animated Play Button -->
+        <div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 bg-sky-600 group-hover:bg-sky-500 text-white rounded-full flex items-center justify-center shadow-2xl transition transform group-hover:scale-110">
+            <svg class="w-8 h-8 sm:w-10 sm:h-10 fill-current translate-x-0.5" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tiny script to insert iframe ONLY on click -->
+    <script>
+      function loadYouTubeIframe() {
+        const container = document.getElementById('videoContainer');
+        container.innerHTML = `<iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/SPNBU9r_mnQ?autoplay=1&rel=0&modestbranding=1" title="Meet Payless" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      }
+    </script>
+    
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch border-t border-[#E8DCC0] pt-14 bg-[#FDF0D5]">
+      <div class="bg-white border border-[#E8DCC0] rounded-2xl p-6 space-y-4 shadow-sm">
+        <h3 class="font-display text-lg font-bold text-zinc-900 border-b border-[#E8DCC0] pb-3">Our Story</h3>
+        <p class="text-sm text-zinc-600 leading-relaxed">
+          Our family has been in the home remodeling business since 1985, starting with Carpet Wagon. Over the years, we saw the same story play out again and again: homeowners frustrated by long timelines, poor communication, and contractors who disappeared halfway through the job.
+        </p>
+        <p class="text-sm text-zinc-600 leading-relaxed">
+          That's why we started Payless Kitchen & Bath — to do it differently. Fewer delays. Clearer communication. A process built around you, not around us. Four decades later, that's still the standard we hold ourselves to on every kitchen, bathroom, and flooring project we take on.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-[#E8DCC0] overflow-hidden min-h-[260px] shadow-lg">
+        <img src="images/Payless-team.webp" alt="The Payless Kitchens & Baths team" loading="lazy" class="w-full h-full object-cover">
+      </div>
+    </section>
+
+    <section class="border-t border-[#E8DCC0] pt-14">
+      <div class="bg-white border border-[#E8DCC0] rounded-2xl p-6 space-y-4 shadow-sm">
+        <h3 class="font-display text-lg font-bold text-zinc-900 border-b border-[#E8DCC0] pb-3">Our Values</h3>
+        <p class="text-sm text-zinc-600 leading-relaxed">
+          Everything starts with putting the homeowner first — transparent, itemized pricing you can actually understand, a dedicated project coordinator who keeps you informed at every stage, and a firm commitment to the timeline we give you in writing.
+        </p>
+        <p class="text-sm text-zinc-600 leading-relaxed">
+          We use premium materials and back our work with a workmanship guarantee, because a remodel should still look and feel great years from now, not just on installation day. It's the standard behind every project we complete.
+        </p>
+      </div>
+    </section>
+    
     <section class="text-center space-y-5 border-t border-[#E8DCC0] pt-14 pb-4">
       <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900">Ready to See What's Possible?</h2>
       <p class="text-sm text-zinc-600 max-w-md mx-auto">Answer a few quick questions and see if your home qualifies for a free design consultation.</p>
